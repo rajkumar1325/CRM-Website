@@ -1,2 +1,3 @@
-# CRM-Website
-This is my 4th year major website.
+class --> tailwind
+className = own react
+<!-- Actually both are same -->
