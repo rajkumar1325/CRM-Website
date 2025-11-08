@@ -124,7 +124,7 @@ const Sidebar = () => {
 
 
 
-        {/* ---------- TEAMS SECTION ---------- */}
+        {/* ----------# TEAMS SECTION ---------- */}
         <div className="mt-6 px-6">
           {/* Show section title only when expanded */}
           {isOpen && (
