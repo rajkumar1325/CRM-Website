@@ -13,3 +13,6 @@ className = own react
 
 used in piechart 
 - // #region mockData counting --> used to minimise a specific line of code
+
+
+lucide-react - icon == used in sidebar only

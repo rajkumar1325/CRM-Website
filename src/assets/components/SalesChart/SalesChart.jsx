@@ -91,7 +91,8 @@ export default function SalesChart() {
 
   return (
     <div
-      className={`w-full h-full  md:w-4/10 max-w-[600px]  p-5 rounded-xl shadow-lg transition-colors duration-500 ${
+      className={`w-full h-auto md:w-[50%] lg:w-[600px] p-4 sm:p-5 rounded-xl shadow-lg transition-colors duration-500 relative
+ ${
         isDarkMode ? "bg-[#21222D] text-gray-100" : "bg-white text-gray-900"
       }`}
     >
@@ -103,10 +104,12 @@ export default function SalesChart() {
         <select
           value={filter}
           onChange={handleChange}
-          className={`border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 ${
-            isDarkMode
-              ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500"
-              : "bg-gray-50 border-gray-300 text-gray-800 focus:ring-green-500"
+          className={`border rounded-md text-sm sm:text-base px-2 sm:px-3 py-1 sm:py-2 focus:outline-none focus:ring-2 
+            transition-all duration-300 w-full sm:w-auto max-w-[200px] 
+            ${
+              isDarkMode
+                ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500"
+                : "bg-gray-50 border-gray-300 text-gray-800 focus:ring-green-500"
           }`}
         >
           <option value="today">Today's Sales</option>

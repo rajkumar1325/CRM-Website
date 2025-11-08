@@ -9,36 +9,43 @@ import SalesChart from './assets/components/SalesChart/SalesChart.jsx';
 import CustomerFulfilmentChart from './assets/components/CustomerFullfilment/CustomerFullfillment.jsx';
 import TodoList from './assets/components/ToDoList/TodoList.jsx';
 import MeetingCard from './assets/components/MeetingCard/MeetingCard.jsx';
+import Sidebar from './assets/Sidebar/Sidebar.jsx';
 
 function App() {
 
    return (
       <>
 
-         <div className='bg-[#171821]'>
-            <Topbar />
+         <div className="flex">
 
-            <div className='flex flex-col md:flex-row gap-2'>
-
-               <Cards />
-               <GaugeCard />
-            </div>
-
-            <div className="flex flex-col gap-2 flex-start  md:flex-row mt-2">
-
-            </div>
-               <PieChart />
-
-            <div className='flex flex-col justify-around gap-2 mt-2 md:flex-row'>
-               <CustomerFulfilmentChart />
-               <SalesChart />
-            </div>
+            <Sidebar />
 
 
-            <div className='flex flex-col md:flex-row gap-2 mt-2'>
-               <TodoList />
-               <MeetingCard />
-            </div>
+
+            <main className='p-4 bg-[#171821]'>
+
+               <div className='bg-[#171821]'>
+                  <Topbar />
+
+                  <div className='flex flex-col md:flex-row gap-2'>
+                     <Cards />
+                     <GaugeCard />
+                  </div>
+
+                  <div className='flex flex-col justify-around gap-2 mt-2 md:flex-row'>
+                     <PieChart />
+                     <SalesChart />
+                  </div>
+
+                  <div className='flex flex-col md:flex-row gap-2 mt-2'>
+                     <CustomerFulfilmentChart />
+                     <TodoList />
+                     <MeetingCard />
+                  </div>
+               </div>
+
+
+            </main>
          </div>
       </>
    )
