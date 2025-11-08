@@ -16,3 +16,8 @@ used in piechart
 
 
 lucide-react - icon == used in sidebar only
+
+
+
+
+To make the routing, must wrap the app.jsx insde the <Router> tag

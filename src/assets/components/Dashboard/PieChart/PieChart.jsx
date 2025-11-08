@@ -3,7 +3,7 @@ import { PieChart, pieArcClasses, pieClasses } from "@mui/x-charts/PieChart";
 import { rainbowSurgePalette } from "@mui/x-charts/colorPalettes";
 import { useTheme } from "@mui/material/styles";
 
-import { mockData } from "../../MockData/MockData";
+import { mockData } from "../../../MockData/MockData";
 
 export default function LeadsPieChart() {
     const theme = useTheme();

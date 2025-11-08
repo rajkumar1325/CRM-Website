@@ -1,5 +1,5 @@
 import React from 'react'
-import { mockData } from '../../MockData/MockData';
+import { mockData } from '../../../MockData/MockData.jsx';
 
 import Card1 from "./icons/total-lead.svg?react";
 import Active from "./icons/active.svg?react";
@@ -30,7 +30,7 @@ export default function Cards() {
 
     return (
         <>
-            <div className="bg-[#21222D] w-full h-full md:w-7/10 mt-4 flex flex-col gap-6 rounded-2xl p-4 overflow-hidden ">
+            <div className="bg-[#21222D] text-white w-full h-full md:w-7/10 mt-4 flex flex-col gap-6 rounded-2xl p-4 overflow-hidden ">
                 <h1 className='font-semibold text-3xl m-4'>Leads Summary</h1>
 
                 {/* items */}

@@ -1,5 +1,5 @@
 import React from "react";
-import { mockData } from "../../MockData/MockData";
+import { mockData } from "../../../MockData/MockData";
 import {
   GaugeContainer,
   GaugeReferenceArc,
