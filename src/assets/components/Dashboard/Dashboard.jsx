@@ -14,9 +14,7 @@ import MeetingCard from './MeetingCard/MeetingCard.jsx';
 export default function Dashboard() {
   return (
     <>
-        <div className='bg-[#171821]'>
-                  <Topbar />
-
+        
                   <div className='flex flex-col md:flex-row gap-2'>
                      <Cards />
                      <GaugeCard />
@@ -32,7 +30,7 @@ export default function Dashboard() {
                      <TodoList />
                      <MeetingCard />
                   </div>
-               </div>
+               
     </>
   )
 }

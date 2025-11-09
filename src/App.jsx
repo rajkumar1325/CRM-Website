@@ -1,8 +1,10 @@
 
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from './assets/Sidebar/Sidebar.jsx';
 import Dashboard from './assets/components/Dashboard/Dashboard.jsx';
+
+import Topbar from './assets/Topbar/Topbar.jsx';
 
 function App() {
    return (
@@ -10,7 +12,10 @@ function App() {
          <Router>
             <div className="flex">
                <Sidebar />
-               <main className='p-4 bg-[#171821]'>
+
+               <main className='p-4 bg-[#171821] w-full'>
+                     <Topbar />
+
                   <Routes>
                      <Route path="/" element={<Dashboard />} />
                      {/* <Route path="/team" element={<Team />} /> */}
