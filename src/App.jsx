@@ -22,10 +22,10 @@ function App() {
                      <Route path="/" element={<Dashboard />} />
                      <Route path="/leads" element={<Leads />} />
 
-                     {/* //line87 --> sidebar */}
+                     {/* //path linked to line87(navigation-section) --> sidebar */}
                      <Route path="/customers" element={<Customer />} /> 
 
-                     
+
                      {/* <Route path="/team" element={<Team />} /> */}
 
                   </Routes>
