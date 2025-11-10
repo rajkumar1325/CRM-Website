@@ -496,6 +496,70 @@ export const supportData = [
 
 
 
+export const dealsData = [
+  {
+    id: "DEAL-001",
+    name: "Website Redesign Project",
+    company: "Sharma Designs",
+    contactPerson: "Priya Sharma",
+    stage: "Proposal Sent",
+    value: "$3,000",
+    probability: 70,
+    expectedClose: "2025-11-25",
+    status: "Active",
+    assignedTo: "Sarah Kim",
+    notes: "Waiting for client to review proposal.",
+  },
+  {
+    id: "DEAL-002",
+    name: "Cloud Migration Service",
+    company: "TechNova Ltd.",
+    contactPerson: "Lucas Martínez",
+    stage: "Negotiation",
+    value: "$12,000",
+    probability: 60,
+    expectedClose: "2025-12-10",
+    status: "Active",
+    assignedTo: "John Doe",
+    notes: "Negotiation on pricing terms.",
+  },
+  {
+    id: "DEAL-003",
+    name: "CRM Subscription Renewal",
+    company: "Acme Corp",
+    contactPerson: "John Doe",
+    stage: "Closed Won",
+    value: "$1,200",
+    probability: 100,
+    expectedClose: "2025-10-30",
+    status: "Won",
+    assignedTo: "Priya Sharma",
+    notes: "Deal successfully renewed for 12 months.",
+  },
+  {
+    id: "DEAL-004",
+    name: "Marketing Automation Package",
+    company: "Bright Marketing",
+    contactPerson: "Sarah Kim",
+    stage: "Closed Lost",
+    value: "$2,500",
+    probability: 0,
+    expectedClose: "2025-09-20",
+    status: "Lost",
+    assignedTo: "Lucas Martínez",
+    notes: "Client chose competitor’s product.",
+  },
+];
+
+
+
+
+
+
+
+
+
+
 
 
 // CHECKBOX DATA

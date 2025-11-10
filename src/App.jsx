@@ -9,6 +9,7 @@ import Leads from './assets/components/Leads/Leads.jsx';
 import Customer from './assets/components/Customers/Customer.jsx';
 import { useState } from 'react';
 import Support from './assets/components/customerSupport/Support.jsx';
+import Deals from './assets/components/Deals/Deals.jsx';
 
 function App() {
 
@@ -41,6 +42,12 @@ function App() {
                      {/* Support Section */}
                      <Route path = "/support"
                         element= {<Support/>}
+                     />
+
+
+                        {/*Leads Section  */}
+                     <Route path = "/deals"
+                        element= {<Deals darkMode={"true"} searchQuery={search}/>}
                      />
 
                      {/* <Route path="/team" element={<Team />} /> */}

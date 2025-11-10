@@ -42,3 +42,34 @@ To make the routing, must wrap the app.jsx insde the <Router> tag
 - A person or organization that has *purchased* from you or *signed a contract* (i.e., they’ve converted). 
 - Later stage — post-sale / relationship management 
 - Someone who paid for your product or subscribed to your service              |
+
+
+
+
+
+
+
+
+💻 What to Display in the Deals Section
+Just like your Customer and Support sections, the Deals section should show a grid or list of deals.
+Each card or row might include:
+
+- Deal Name / Company
+- Stage & Probability
+- Deal Value
+- Expected Close Date
+- Status badge (Active / Won / Lost)
+- Assigned To
+
+- A “View” button (opens modal with full details)
+
+
+
+
+
+Stage	Color Suggestion
+Prospecting	🟡 Yellow
+Proposal	🟢 Green
+Negotiation	🟣 Purple
+Closed Won	🟩 Bright Green
+Closed Lost	🔴 Red
