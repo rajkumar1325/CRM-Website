@@ -558,6 +558,48 @@ export const dealsData = [
 
 
 
+// reports section
+export const reportsData = {
+  summary: {
+    totalLeads: 145,
+    totalCustomers: 87,
+    dealsWon: 35,
+    dealsLost: 12,
+    totalRevenue: 45000,
+    conversionRate: 24,
+    avgDealValue: 1285,
+  },
+  monthlySales: [
+    { month: "Jan", value: 10000 },
+    { month: "Feb", value: 14000 },
+    { month: "Mar", value: 18000 },
+    { month: "Apr", value: 22000 },
+    { month: "May", value: 26000 },
+    { month: "Jun", value: 30000 },
+    { month: "Jul", value: 28000 },
+    { month: "Aug", value: 31000 },
+    { month: "Sep", value: 33000 },
+    { month: "Oct", value: 40000 },
+    { month: "Nov", value: 45000 },
+    { month: "Dec", value: 48000 },
+  ],
+  dealStatus: [
+    { name: "Won", value: 35 },
+    { name: "Lost", value: 12 },
+    { name: "Active", value: 28 },
+  ],
+  topSalesReps: [
+    { name: "Sarah Kim", value: 12000 },
+    { name: "Priya Sharma", value: 10000 },
+    { name: "John Doe", value: 9000 },
+    { name: "Lucas Martínez", value: 8000 },
+  ],
+};
+
+
+
+
+
 
 
 

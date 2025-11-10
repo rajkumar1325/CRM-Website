@@ -10,6 +10,8 @@ import Customer from './assets/components/Customers/Customer.jsx';
 import { useState } from 'react';
 import Support from './assets/components/customerSupport/Support.jsx';
 import Deals from './assets/components/Deals/Deals.jsx';
+import Reports from './assets/components/Reports/Reports.jsx';
+
 
 function App() {
 
@@ -49,6 +51,13 @@ function App() {
                      <Route path = "/deals"
                         element= {<Deals darkMode={"true"} searchQuery={search}/>}
                      />
+
+
+                     <Route
+                        path="/reports"
+                        element={<Reports darkMode={true} />}
+                     />
+
 
                      {/* <Route path="/team" element={<Team />} /> */}
 
