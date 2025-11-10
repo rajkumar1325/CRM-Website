@@ -15,7 +15,7 @@ import { reportsData } from "../../MockData/MockData.jsx"; // ✅ Mock report da
 
 const Reports = ({ darkMode }) => {
   // ==============================
-  // 🎯 STATE VARIABLES
+  //  STATE VARIABLES
   // ==============================
 
   // State for selected metric (which card was clicked)
