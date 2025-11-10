@@ -33,7 +33,7 @@ const Sidebar = () => {
     return (
       <Link
         to={to}
-        className={`group relative flex items-center px-6 py-2 rounded-md mx-3 mb-2 transition-colors duration-200 ${isActive ? "text-green-500 bg-[#1e293b]" : "hover:text-blue-300"
+        className={`group relative flex items-center px-6 py-2 rounded-md mx-3 mb-2 transition-colors duration-200 ${isActive ? "text-green-500 bg-[#3e412c]" : "hover:text-blue-300"
           }`}
       >
         <Icon className="w-5 h-5 min-w-5" />
@@ -55,7 +55,7 @@ const Sidebar = () => {
     <div
       // backgroundImage: 'linear-gradient(to bottom, #2F4F4F, #1C2B2B)', //gradient-color
 
-      className={`h-auto bg-gradient-to-b from-[#558f8f] via-[#1C2B2B] to-[#1C2B2B] text-gray-300 flex flex-col justify-between transition-all duration-300 ${isOpen ? "w-64" : "w-20"
+      className={`h-auto bg-gradient-to-b from-[#3c6565] via-[#131d1d] to-[#1C2B2B] text-gray-400 flex flex-col justify-between transition-all duration-300 ${isOpen ? "w-64" : "w-20"
         }`}
     >
       {/* ---------- TOP SECTION ---------- */}
@@ -79,7 +79,7 @@ const Sidebar = () => {
 
 
 
-        {/* ---------- NAVIGATION SECTION ---------- */}
+        {/* ---------- NAVIGATION SECTION {sidebar links} ---------- */}
         <nav className="mt-4">
           {/* Each item individually */}
           <NavItem to="/" label="Home" Icon={Home} />

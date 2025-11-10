@@ -5,6 +5,8 @@ import Sidebar from './assets/Sidebar/Sidebar.jsx';
 import Dashboard from './assets/components/Dashboard/Dashboard.jsx';
 
 import Topbar from './assets/Topbar/Topbar.jsx';
+import Leads from './assets/components/Leads/Leads.jsx';
+import Customer from './assets/components/Customers/Customer.jsx';
 
 function App() {
    return (
@@ -18,6 +20,12 @@ function App() {
 
                   <Routes>
                      <Route path="/" element={<Dashboard />} />
+                     <Route path="/leads" element={<Leads />} />
+
+                     {/* //line87 --> sidebar */}
+                     <Route path="/customers" element={<Customer />} /> 
+
+                     
                      {/* <Route path="/team" element={<Team />} /> */}
 
                   </Routes>
