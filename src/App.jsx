@@ -8,6 +8,7 @@ import Topbar from './assets/Topbar/Topbar.jsx';
 import Leads from './assets/components/Leads/Leads.jsx';
 import Customer from './assets/components/Customers/Customer.jsx';
 import { useState } from 'react';
+import Support from './assets/components/customerSupport/Support.jsx';
 
 function App() {
 
@@ -28,11 +29,19 @@ function App() {
                      <Route path="/" element={<Dashboard />} />
                      <Route path="/leads" element={<Leads />} />
 
+
+
                      {/* //path linked to line87(navigation-section) --> sidebar */}
                      <Route path="/customers"
                         element={<Customer darkMode={true} searchQuery={search} />}
                      />
 
+
+
+                     {/* Support Section */}
+                     <Route path = "/support"
+                        element= {<Support/>}
+                     />
 
                      {/* <Route path="/team" element={<Team />} /> */}
 

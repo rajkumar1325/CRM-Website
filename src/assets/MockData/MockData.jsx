@@ -453,63 +453,48 @@ export const customersData = [
 
 
 
+//supportData
+export const supportData = [
+  {
+    id: "TCK-001",
+    customer: "John Doe",
+    issue: "Login not working",
+    description: "Customer is unable to log into their dashboard using Google sign-in.",
+    priority: "High",
+    status: "Open",
+    assignedTo: "Sarah Kim",
+    dateCreated: "2025-11-05",
+    lastUpdated: "2025-11-10",
+    channel: "Email",
+  },
+  {
+    id: "TCK-002",
+    customer: "Priya Sharma",
+    issue: "Billing error",
+    description: "Invoice shows incorrect amount for September.",
+    priority: "Medium",
+    status: "In Progress",
+    assignedTo: "Lucas Martínez",
+    dateCreated: "2025-11-02",
+    lastUpdated: "2025-11-08",
+    channel: "Chat",
+  },
+  {
+    id: "TCK-003",
+    customer: "TechNova Ltd.",
+    issue: "Request for data export",
+    description: "Customer requested CSV export of all user data for audit purposes.",
+    priority: "Low",
+    status: "Resolved",
+    assignedTo: "John Doe",
+    dateCreated: "2025-10-25",
+    lastUpdated: "2025-11-01",
+    channel: "Phone",
+  },
+];
 
 
 
-// Data for the 'Dashboard' charts
-export const mockDataDashboard = {
-    // Data for the 'Leads by Status' pie chart
-    leadsByStatus: [
-        {
-            id: "qualified",
-            label: "qualified",
-            value: 5,
-        },
-        {
-            id: "new",
-            label: "new",
-            value: 5,
-        },
-        {
-            id: "contacted",
-            label: "contacted",
-            value: 4,
-        },
-        {
-            id: "converted",
-            label: "converted",
-            value: 8,
-        },
-        {
-            id: "lost",
-            label: "lost",
-            value: 3,
-        },
-    ],
-    // Data for the 'Leads by Source' bar chart
-    leadsBySource: [
-        {
-            source: "Website",
-            leads: 9,
-        },
-        {
-            source: "Referral",
-            leads: 5,
-        },
-        {
-            source: "Social Media",
-            leads: 5,
-        },
-        {
-            source: "Cold Call",
-            leads: 4,
-        },
-        {
-            source: "Email Campaign",
-            leads: 3,
-        },
-    ],
-};
 
 
 
