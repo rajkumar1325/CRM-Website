@@ -8,8 +8,9 @@ import Moon from "../../assets/components/Icons/half-moon.svg?react" //dark-btn
 import Profile from "../../assets/components/Icons/profile-circle.svg?react" //dark-btn
 
 
-function Topbar() {
-  const handleNotification = () => {
+function Topbar({setSearch}) {
+
+    const handleNotification = () => {
     console.log("Notification button clicked!");
     alert("Notification Button clicked");
   };
@@ -30,8 +31,6 @@ function Topbar() {
   };
 
 
-
-
   return (
     <div className="flex items-center justify-between w-full p-1 dark:bg-[#171821] bg-gray-50">
 
@@ -39,7 +38,8 @@ function Topbar() {
       <div className="flex-1 max-w-7/10 ">
         <input
           type="text"
-          id="search"
+          id="search Here..."
+          onChange={(e)=> setSearch(e.target.value)}
           className="w-full bg-[#21222D] border border-gray-700 text-gray-100 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 p-2.5 placeholder-gray-400 shadow-2xl-red"
           placeholder="Search Here"
         />

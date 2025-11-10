@@ -7,8 +7,12 @@ import Dashboard from './assets/components/Dashboard/Dashboard.jsx';
 import Topbar from './assets/Topbar/Topbar.jsx';
 import Leads from './assets/components/Leads/Leads.jsx';
 import Customer from './assets/components/Customers/Customer.jsx';
+import { useState } from 'react';
 
 function App() {
+
+   const [search, setSearch] = useState("");
+
    return (
       <>
          <Router>
@@ -16,14 +20,18 @@ function App() {
                <Sidebar />
 
                <main className='p-4 bg-[#171821] w-full'>
-                     <Topbar />
+
+                  {/* passing prop inside the topbar */}
+                  <Topbar setSearch={setSearch} />
 
                   <Routes>
                      <Route path="/" element={<Dashboard />} />
                      <Route path="/leads" element={<Leads />} />
 
                      {/* //path linked to line87(navigation-section) --> sidebar */}
-                     <Route path="/customers" element={<Customer />} /> 
+                     <Route path="/customers"
+                        element={<Customer darkMode={true} searchQuery={search} />}
+                     />
 
 
                      {/* <Route path="/team" element={<Team />} /> */}
