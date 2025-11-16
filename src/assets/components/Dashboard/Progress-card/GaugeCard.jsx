@@ -82,7 +82,7 @@ export default function EarningsCard() {
       <p className="text-gray-400 text-sm">Total Earning</p>
 
       {/* Amount (with explicit conversion upto 2 decimal pnts)*/}
-      <p className="text-3xl font-bold text-[#7de0d6] mt-1">$ {TotalEarning.toFixed(2)}</p>
+      <p className="sm:text-base md:text-xl lg:text-3xl font-bold text-[#7de0d6] mt-1">$ {TotalEarning.toFixed(2)}</p>
 
       {/* Profit Info */}
       <p className="text-gray-400 text-sm mt-1">

@@ -97,15 +97,15 @@ export default function SalesChart() {
       }`}
     >
       {/* Header Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-3">
-        <h2 className="text-lg font-semibold">{salesData[filter].label}</h2>
+      <div className="flex flex-row justify-between items-center mb-4 gap-3 overflow-x-hidden">
+        <h2 className="sm:text-sm md:text-xl font-semibold">{salesData[filter].label}</h2>
 
         {/* Dropdown */}
         <select
           value={filter}
           onChange={handleChange}
           className={`border rounded-md text-sm sm:text-base px-2 sm:px-3 py-1 sm:py-2 focus:outline-none focus:ring-2 
-            transition-all duration-300 w-full sm:w-auto max-w-[200px] 
+            transition-all duration-300 w-full sm:w-auto max-w-[200px]
             ${
               isDarkMode
                 ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500"

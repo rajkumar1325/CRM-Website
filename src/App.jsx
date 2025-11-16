@@ -23,7 +23,7 @@ function App() {
             <div className="flex">
                <Sidebar />
 
-               <main className='p-4 bg-[#171821] w-full'>
+               <main className='flex-grow p-4 bg-[#171821] w-full overflow-x-hidden'>
 
                   {/* passing prop inside the topbar */}
                   <Topbar setSearch={setSearch} />

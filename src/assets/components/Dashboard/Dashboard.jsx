@@ -21,7 +21,7 @@ export default function Dashboard() {
                   </div>
 
                   <div className='flex flex-col justify-around gap-2 mt-2 md:flex-row'>
-                     <PieChart />
+                     <PieChart darkMode={true}/>
                      <SalesChart />
                   </div>
 

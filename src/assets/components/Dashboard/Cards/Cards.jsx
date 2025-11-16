@@ -33,9 +33,11 @@ export default function Cards() {
             <div className="bg-[#21222D] text-white w-full h-full md:w-7/10 mt-4 flex flex-col gap-6 rounded-2xl p-4 overflow-hidden ">
                 <h1 className='font-semibold text-3xl m-4'>Leads Summary</h1>
 
-                {/* items */}
+                {/* items container*/}
                 <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2'>
-                    <div className="flex justify-around item-center w-full  md:w-[12em] rounded-xl bg-[#171821] text-white">
+
+                    {/* individual items */}
+                    <div className="flex justify-around item-center w-full  gap-2 md:w-[12em] rounded-xl bg-[#171821] text-white">
                         <div className="w-[9em] m-5 flex md:flex-col ">
                             <div className='mb-4 mr-4 flex items-center'>
                                 <Card1 />
