@@ -195,7 +195,7 @@ const Sidebar = () => {
               )}
             </div>
 
-            <div className="cursor-pointer hover:text-red-500 transition">
+            <div className="cursor-pointer text-red-500 hover:text-red-700 transition">
               <p className="text-sm font-medium">Log Out</p>
             </div>
           </>
@@ -203,7 +203,7 @@ const Sidebar = () => {
           <div className="group cursor-pointer hover:text-red-500 transition">
             <LogOut />
             <span
-              className="absolute left-16 bg-gray-800 text-white text-xs px-2 py-1 rounded-md opacity-0 
+              className="absolute left-16 bg-gray-800 text-red-900 text-xs px-2 py-1 rounded-md opacity-0 
               group-hover:opacity-100 transition-opacity duration-300"
             >
               Log Out

@@ -73,3 +73,15 @@ Proposal	🟢 Green
 Negotiation	🟣 Purple
 Closed Won	🟩 Bright Green
 Closed Lost	🔴 Red
+
+
+
+
+
+
+
+
+
+className always takes "string" or "expression"
+- className="string"        // static
+- className={expression}    // dynamic/template literal

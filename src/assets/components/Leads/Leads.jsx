@@ -68,21 +68,25 @@ export default function Leads() {
           <p className="text-sm text-gray-500">Manage your sales leads</p>
         </div>
 
-        <div className="flex items-center gap-3">
+
+
+        
           <input
             type="text"
-            placeholder="Search by name or company..."
+            placeholder=""
             className="border text-green-200 border-gray-300 rounded-lg px-3 py-1 text-sm focus:outline-blue-400"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+
+          
           <button
             onClick={() => handleOpen()}
             className="bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-500 transition"
           >
             + Add Lead
           </button>
-        </div>
+        
       </div>
 
       {/* Table */}

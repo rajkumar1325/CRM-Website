@@ -1,6 +1,8 @@
 
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useLocation } from 'react-router-dom'; //access current route
+
 import Sidebar from './assets/Sidebar/Sidebar.jsx';
 import Dashboard from './assets/components/Dashboard/Dashboard.jsx';
 
@@ -16,17 +18,35 @@ import Reports from './assets/components/Reports/Reports.jsx';
 function App() {
 
    const [search, setSearch] = useState("");
+   const [dark, setDark] = useState(true); //global theme toggle
+
+
+   const location = useLocation();
+
+   // search placeholder
+   const getPlaceHolder = () => {
+      if(location.pathname === '/leads') return "Search by name and Company";
+      if(location.pathname === '/customers') return "Search by customer name and Company";
+      if(location.pathname === '/support') return "Search by support tickets";
+      if(location.pathname === '/deals') return "Search deals";
+      return "Search now..."
+   }
 
    return (
       <>
-         <Router>
-            <div className="flex">
-               <Sidebar />
+         
+            <div className={`flex ${dark ? 'bg-[#171821]' : 'bg-gray-100'}`}>
+               <Sidebar/>
 
                <main className='flex-grow p-4 bg-[#171821] w-full overflow-x-hidden'>
 
                   {/* passing prop inside the topbar */}
-                  <Topbar setSearch={setSearch} />
+                  <Topbar 
+                     setSearch={setSearch} 
+                     searchPlaceHolder = {getPlaceHolder()}
+                     isDark = {dark}
+                     setIsDark = {setDark}
+                     />
 
                   <Routes>
                      <Route path="/" element={<Dashboard />} />
@@ -65,7 +85,7 @@ function App() {
                </main>
 
             </div>
-         </Router>
+         
       </>
    )
 }
