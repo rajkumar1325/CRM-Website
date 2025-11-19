@@ -23,6 +23,7 @@ export const mockData = [
     conversionDate: "2025-01-28",
     dealStatus: "active",
     receivedAmount: 120000,
+    purchaseDate : "2025-01-28",
   },
   {
     id: 498276,
@@ -33,6 +34,8 @@ export const mockData = [
     conversionDate: "2025-02-14",
     dealStatus: "close",
     receivedAmount: 95000,
+    purchaseDate : "2025-02-28"
+
   },
   {
     id: 732145,
@@ -43,6 +46,7 @@ export const mockData = [
     conversionDate: "2025-03-22",
     dealStatus: "close",
     receivedAmount: 175000,
+    purchaseDate : "2025-01-22"
   },
   {
     id: 812364,
@@ -53,6 +57,7 @@ export const mockData = [
     conversionDate: "2025-04-01",
     dealStatus: "close",
     receivedAmount: 140000,
+    purchaseDate : "2025-01-18"
   },
   {
     id: 964523,
@@ -63,6 +68,7 @@ export const mockData = [
     conversionDate: "2025-04-18",
     dealStatus: "close",
     receivedAmount: 210000,
+    purchaseDate : "2015-01-28"
   },
   {
     id: 174862,
@@ -73,6 +79,7 @@ export const mockData = [
     conversionDate: "2025-05-09",
     dealStatus: "close",
     receivedAmount: 88000,
+    purchaseDate : "2025-11-28"
   },
   {
     id: 653217,
@@ -83,6 +90,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 165000,
+    purchaseDate : "2025-01-01"
   },
   {
     id: 762931,
@@ -93,6 +101,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-02"
   },
   {
     id: 849523,
@@ -103,6 +112,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-03"
   },
   {
     id: 951246,
@@ -113,6 +123,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-04"
   },
   {
     id: 103852,
@@ -123,6 +134,7 @@ export const mockData = [
     conversionDate: "2024-01-15",
     dealStatus: "close",
     receivedAmount: 110000,
+    purchaseDate : "2025-01-05"
   },
   {
     id: 118945,
@@ -133,6 +145,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2025-01-06"
   },
   {
     id: 129478,
@@ -143,6 +156,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-07"
   },
   {
     id: 137592,
@@ -153,6 +167,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-08"
   },
   {
     id: 148236,
@@ -163,6 +178,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-06-09"
   },
   {
     id: 159847,
@@ -173,6 +189,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-04-28"
   },
   {
     id: 163924,
@@ -183,6 +200,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2025-01-10"
   },
   {
     id: 174658,
@@ -193,6 +211,7 @@ export const mockData = [
     conversionDate: "2024-02-20",
     dealStatus: "close",
     receivedAmount: 132000,
+    purchaseDate : "2025-02-15"
   },
   {
     id: 186523,
@@ -203,6 +222,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2025-04-23"
   },
   {
     id: 197351,
@@ -213,6 +233,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2021-01-28"
   },
   {
     id: 203467,
@@ -223,6 +244,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2022-01-28"
   },
   {
     id: 219456,
@@ -233,6 +255,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2023-01-28"
   },
   {
     id: 223785,
@@ -243,6 +266,7 @@ export const mockData = [
     conversionDate: "2024-03-05",
     dealStatus: "close",
     receivedAmount: 98000,
+    purchaseDate : "2011-01-28"
   },
   {
     id: 234871,
@@ -253,6 +277,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2012-01-28"
   },
   {
     id: 247953,
@@ -263,6 +288,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2014-01-28"
   },
   {
     id: 258417,
@@ -273,6 +299,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2001-01-28"
   },
   {
     id: 268934,
@@ -283,6 +310,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2002-01-28"
   },
   {
     id: 279846,
@@ -293,6 +321,7 @@ export const mockData = [
     conversionDate: "2025-01-28",
     dealStatus: "active",
     receivedAmount: 15000,
+    purchaseDate : "2003-01-28"
   },
   {
     id: 289561,
@@ -303,6 +332,7 @@ export const mockData = [
     conversionDate: "2025-02-14",
     dealStatus: "close",
     receivedAmount: 12000,
+    purchaseDate : "2004-01-28"
   },
   {
     id: 299817,
@@ -313,6 +343,7 @@ export const mockData = [
     conversionDate: "2025-03-22",
     dealStatus: "active",
     receivedAmount: 18000,
+    purchaseDate : "2005-01-28"
   },
   {
     id: 306784,
@@ -323,6 +354,7 @@ export const mockData = [
     conversionDate: "2025-04-01",
     dealStatus: "close",
     receivedAmount: 20000,
+    purchaseDate : "2006-01-28"
   },
   {
     id: 312958,
@@ -333,6 +365,7 @@ export const mockData = [
     conversionDate: "2025-04-18",
     dealStatus: "active",
     receivedAmount: 22000,
+    purchaseDate : "2007-01-28"
   },
   {
     id: 324879,
@@ -343,6 +376,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
+    purchaseDate : "2008-01-28"
   },
   {
     id: 336512,
@@ -353,6 +387,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2025-03-28"
   },
   {
     id: 347916,
@@ -363,6 +398,7 @@ export const mockData = [
     conversionDate: "2024-01-15",
     dealStatus: "close",
     receivedAmount: 14000,
+    purchaseDate : "2025-01-29"
   },
   {
     id: 358724,
@@ -373,6 +409,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2025-01-30"
   },
   {
     id: 369528,
@@ -383,6 +420,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
+    purchaseDate : "2025-01-31"
   },
   {
     id: 372814,
@@ -393,6 +431,7 @@ export const mockData = [
     conversionDate: "2024-02-20",
     dealStatus: "close",
     receivedAmount: 17500,
+    purchaseDate : "2025-06-22"
   },
 ];
 
@@ -403,50 +442,289 @@ export const mockData = [
 // Data for the 'Customers' table view
 export const customersData = [
   {
-    id: 1,
+    id: "CUST-1001",
     name: "John Doe",
     company: "Acme Corp",
-    email: "john.doe@acmecorp.com",
+    address: "12 Market St, Suite 400, San Francisco, CA 94103",
     phone: "+1 (555) 123-4567",
+    email: "john.doe@acmecorp.com",
     product: "CRM Pro Subscription",
     purchaseDate: "2025-08-10",
-    value: "$1,200",
+    purchaseTime: "10:30",
     status: "Active",
+    value: 1200,
+    profilePhoto: null,
   },
   {
-    id: 2,
+    id: "CUST-1002",
+    name: "Sarah Kim",
+    company: "Innovate Inc.",
+    address: "88 Innovation Drive, Palo Alto, CA 94301",
+    phone: "+1 (650) 555-2412",
+    email: "sarah.kim@innovate.inc",
+    product: "Analytics Suite",
+    purchaseDate: "2025-07-22",
+    purchaseTime: "14:05",
+    status: "closed",
+    value: 4500,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1003",
     name: "Priya Sharma",
     company: "Sharma Designs",
-    email: "priya@sharmadesigns.in",
-    phone: "+91 98201 23456",
-    product: "Website Design Package",
-    purchaseDate: "2025-05-22",
-    value: "$850",
+    address: "7 Elm Avenue, Portland, OR 97204",
+    phone: "+1 (503) 555-9876",
+    email: "priya@sharmadesigns.com",
+    product: "Project Tracker",
+    purchaseDate: "2024-11-05",
+    purchaseTime: "09:15",
     status: "Active",
+    value: 3000,
+    profilePhoto: null,
   },
   {
-    id: 3,
+    id: "CUST-1004",
     name: "Lucas Martínez",
-    company: "TechNova",
-    email: "lucas@technova.com",
-    phone: "+34 612 345 789",
-    product: "Cloud Hosting",
-    purchaseDate: "2024-12-01",
-    value: "$3,000",
-    status: "Inactive",
+    company: "TechNova Ltd.",
+    address: "Calle 58 #142, Mexico City, 01000",
+    phone: "+52 (55) 1234-5678",
+    email: "lucas.m@technova.mx",
+    product: "Cloud Storage",
+    purchaseDate: "2025-02-18",
+    purchaseTime: "16:45",
+    status: "Active",
+    value: 12000,
+    profilePhoto: null,
   },
   {
-    id: 4,
-    name: "Sarah Kim",
-    company: "Bright Marketing",
-    email: "sarah.k@brightmarketing.io",
-    phone: "+1 (310) 777-9012",
-    product: "Email Marketing Suite",
-    purchaseDate: "2025-03-15",
-    value: "$2,400",
+    id: "CUST-1005",
+    name: "Emma Wilson",
+    company: "GreenLeaf",
+    address: "341 Green Rd, Seattle, WA 98101",
+    phone: "+1 (206) 555-0101",
+    email: "emma.wilson@greenleaf.com",
+    product: "Finance Manager",
+    purchaseDate: "2024-09-28",
+    purchaseTime: "11:20",
     status: "Active",
+    value: 2800,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1006",
+    name: "Oliver Stone",
+    company: "FuturaTech",
+    address: "9 Bishop's Lane, London, UK W1D 3BQ",
+    phone: "+44 20 7946 0800",
+    email: "oliver.stone@futuratech.co.uk",
+    product: "AI Assistant",
+    purchaseDate: "2024-03-12",
+    purchaseTime: "13:00",
+    status: "closed",
+    value: 6500,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1007",
+    name: "Mona Das",
+    company: "Neon Industries",
+    address: "Plot 14, Sector 21, Gurgaon, Haryana 122001",
+    phone: "+91 124 555 8899",
+    email: "mona.das@neonind.com",
+    product: "Security Suite",
+    purchaseDate: "2025-01-30",
+    purchaseTime: "10:50",
+    status: "Active",
+    value: 5200,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1008",
+    name: "Kevin Hill",
+    company: "Global Softwares",
+    address: "210 King St, Toronto, ON M5H 1J9",
+    phone: "+1 (416) 555-3300",
+    email: "kevin.hill@globalsoft.com",
+    product: "HR Management System",
+    purchaseDate: "2024-05-18",
+    purchaseTime: "15:40",
+    status: "closed",
+    value: 4200,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1009",
+    name: "Linda Scott",
+    company: "Prime Solutions",
+    address: "4 West Park Ave, Boston, MA 02116",
+    phone: "+1 (617) 555-9080",
+    email: "linda.scott@primesol.com",
+    product: "CRM Pro Subscription",
+    purchaseDate: "2025-04-08",
+    purchaseTime: "09:45",
+    status: "Active",
+    value: 1200,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1010",
+    name: "Ethan Moore",
+    company: "LogicWave",
+    address: "72 River Road, Austin, TX 78701",
+    phone: "+1 (512) 555-4123",
+    email: "ethan.moore@logicwave.com",
+    product: "Analytics Suite",
+    purchaseDate: "2024-12-20",
+    purchaseTime: "17:10",
+    status: "closed",
+    value: 6000,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1011",
+    name: "Ava Collins",
+    company: "SkyNet",
+    address: "18 Ocean Drive, Miami, FL 33101",
+    phone: "+1 (305) 555-2211",
+    email: "ava.collins@skynet.com",
+    product: "Cloud Storage",
+    purchaseDate: "2025-06-14",
+    purchaseTime: "12:30",
+    status: "Active",
+    value: 3400,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1012",
+    name: "Liam Turner",
+    company: "NextGen Labs",
+    address: "55 Innovation Blvd, Denver, CO 80202",
+    phone: "+1 (303) 555-6677",
+    email: "liam.turner@nextgenlabs.com",
+    product: "Project Tracker",
+    purchaseDate: "2024-07-09",
+    purchaseTime: "10:05",
+    status: "closed",
+    value: 2100,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1013",
+    name: "Chloe Bennett",
+    company: "Prime Solutions",
+    address: "4 West Park Ave, Boston, MA 02116",
+    phone: "+1 (617) 555-9081",
+    email: "chloe.bennett@primesol.com",
+    product: "ChatBot Pro",
+    purchaseDate: "2024-10-02",
+    purchaseTime: "16:00",
+    status: "Active",
+    value: 1800,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1014",
+    name: "Harshit Singh",
+    company: "Data Systems",
+    address: "A-23, Connaught Place, New Delhi, 110001",
+    phone: "+91 11 5555 2244",
+    email: "harshit.singh@datasys.in",
+    product: "Security Suite",
+    purchaseDate: "2025-03-28",
+    purchaseTime: "11:50",
+    status: "closed",
+    value: 4800,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1015",
+    name: "Rita Kumari",
+    company: "Bright Marketing",
+    address: "No. 6, MG Road, Bengaluru, KA 560001",
+    phone: "+91 80 5555 1212",
+    email: "rita.kumari@brightmkt.com",
+    product: "Marketing Automation",
+    purchaseDate: "2025-09-01",
+    purchaseTime: "09:10",
+    status: "Active",
+    value: 2500,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1016",
+    name: "Kabir Nayak",
+    company: "Workcation",
+    address: "23 Seaside Ave, Chennai, TN 600001",
+    phone: "+91 44 5555 3344",
+    email: "kabir.nayak@workcation.in",
+    product: "HR Management System",
+    purchaseDate: "2024-02-14",
+    purchaseTime: "14:30",
+    status: "Active",
+    value: 4100,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1017",
+    name: "Sophia Patel",
+    company: "Tailwind Labs",
+    address: "101 Software Park, Bangalore, KA 560045",
+    phone: "+91 80 5555 7788",
+    email: "sophia.patel@tailwindlabs.com",
+    product: "Analytics Suite",
+    purchaseDate: "2025-05-21",
+    purchaseTime: "15:15",
+    status: "Active",
+    value: 6200,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1018",
+    name: "Nina Kapoor",
+    company: "Workcation",
+    address: "9 Harbour St, Wellington 6011, NZ",
+    phone: "+64 4 555 9911",
+    email: "nina.kapoor@workcation.nz",
+    product: "CRM Pro Subscription",
+    purchaseDate: "2024-08-06",
+    purchaseTime: "09:55",
+    status: "Active",
+    value: 1250,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1019",
+    name: "David Williams",
+    company: "Global Softwares",
+    address: "500 Tech Park, Columbus, OH 43215",
+    phone: "+1 (614) 555-7800",
+    email: "david.williams@globalsoft.com",
+    product: "Finance Manager",
+    purchaseDate: "2025-10-10",
+    purchaseTime: "13:20",
+    status: "Active",
+    value: 3150,
+    profilePhoto: null,
+  },
+  {
+    id: "CUST-1020",
+    name: "Peter Jones",
+    company: "Solutions Co.",
+    address: "12 North Wharf, Sydney, NSW 2000",
+    phone: "+61 2 5550 7788",
+    email: "peter.jones@solutionsco.au",
+    product: "Project Tracker",
+    purchaseDate: "2025-11-27",
+    purchaseTime: "16:25",
+    status: "closed",
+    value: 1950,
+    profilePhoto: null,
   },
 ];
+
+
+
 
 
 

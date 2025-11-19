@@ -56,7 +56,7 @@ function App() {
 
                      {/* //path linked to line87(navigation-section) --> sidebar */}
                      <Route path="/customers"
-                        element={<Customer darkMode={true} searchQuery={search} />}
+                        element={<Customer darkMode={false} searchQuery={search} />}
                      />
 
 

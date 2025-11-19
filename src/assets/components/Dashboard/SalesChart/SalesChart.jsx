@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 
-import { Chart as ChartJS,  CategoryScale,  LinearScale,  PointElement,  LineElement,  Title,  Tooltip,  Legend,} from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-// Register the required Chart.js components for a line chart.
+// Register line chart components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-
-// Sample data for the sales chart
+// Sample Data
 const salesData = {
   today: {
     labels: ["9 AM", "12 PM", "3 PM", "6 PM", "9 PM"],
@@ -36,87 +44,84 @@ const salesData = {
   },
 };
 
-export default function SalesChart() {
+export default function SalesChart({ isDarkMode = 'f' }) {
+
   const [filter, setFilter] = useState("thisMonth");
-  const [isDarkMode, setIsDarkMode] = useState(true); // false--> light , true-->dark
 
-  const handleChange = (event) => {
-    setFilter(event.target.value);
-  };
+  const handleChange = (event) => setFilter(event.target.value);
 
+  // Chart Data
   const chartData = {
     labels: salesData[filter].labels,
     datasets: [
       {
         label: salesData[filter].label,
         data: salesData[filter].data,
-        // borderColor: isDarkMode ? "#3b82f6" : "#19b26e",
-        // backgroundColor: isDarkMode ? "#21222D" : "#F9FAFC",
-        tension: 0.4, //smooth curve
+        tension: 0.4,
         fill: true,
-        borderColor: "#A9DFD8", 
-        backgroundColor: "rgba(36, 236, 45, 0.2)", // translucent bg color
-
+        borderColor: isDarkMode ? "#4ADE80" : "#2563EB",
+        backgroundColor: isDarkMode
+          ? "rgba(74, 222, 128, 0.2)"
+          : "rgba(37, 99, 235, 0.2)",
       },
     ],
   };
 
+  // Chart Options
   const chartOptions = {
     responsive: true,
-    maintainAspectRatio: true,
-    layout: {
-      padding: { top: 10, right: 20, left: 20, bottom: 10 },
-    },
     plugins: {
       legend: {
         position: "top",
         labels: {
-          usePointStyle: true,
-          pointStyle: "rectRot",
+          color: isDarkMode ? "#D1D5DB" : "#374151",
           font: { size: 11, weight: "bold" },
         },
       },
     },
     scales: {
       x: {
-        grid: { display: true },
-        ticks: { color: isDarkMode ? "#A1A1AA" : "#4B5563" },
+        ticks: { color: isDarkMode ? "#D1D5DB" : "#374151" },
+        grid: { color: isDarkMode ? "#333" : "#E5E7EB" },
       },
       y: {
-        grid: { display: true, color: isDarkMode ? "#374151" : "#E5E7EB" },
-        ticks: { color: isDarkMode ? "#A1A1AA" : "#4B5563" },
+        ticks: { color: isDarkMode ? "#D1D5DB" : "#374151" },
+        grid: { color: isDarkMode ? "#333" : "#E5E7EB" },
       },
     },
   };
 
   return (
     <div
-      className={`w-full h-auto md:w-[50%] lg:w-[600px] p-4 sm:p-5 rounded-xl shadow-lg transition-colors duration-500 relative
- ${
-        isDarkMode ? "bg-[#21222D] text-gray-100" : "bg-white text-gray-900"
-      }`}
+      className={`
+        w-full h-auto md:w-[50%] lg:w-[600px]
+        p-4 sm:p-5 rounded-xl shadow-lg
+        transition-all duration-500
+        ${isDarkMode ? "bg-[#21222D] text-gray-100" : "bg-white text-gray-900"}
+      `}
     >
-      {/* Header Section */}
-      <div className="flex flex-row justify-between items-center mb-4 gap-3 overflow-x-hidden">
-        <h2 className="sm:text-sm md:text-xl font-semibold">{salesData[filter].label}</h2>
+      {/* Header */}
+      <div className="flex justify-between items-center mb-4 gap-3">
+        <h2 className="text-lg font-semibold sm:text-xl">
+          {salesData[filter].label}
+        </h2>
 
-        {/* Dropdown */}
         <select
           value={filter}
           onChange={handleChange}
-          className={`border rounded-md text-sm sm:text-base px-2 sm:px-3 py-1 sm:py-2 focus:outline-none focus:ring-2 
-            transition-all duration-300 w-full sm:w-auto max-w-[200px]
-            ${
-              isDarkMode
-                ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500"
-                : "bg-gray-50 border-gray-300 text-gray-800 focus:ring-green-500"
-          }`}
+          className={`
+            border rounded-md text-sm px-3 py-2 transition
+            ${isDarkMode 
+              ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500" 
+              : "bg-gray-50 border-gray-300 text-gray-800 focus:ring-green-500"
+            }
+          `}
         >
           <option value="today">Today's Sales</option>
-          <option value="thisMonth">Sales This Month</option>
-          <option value="thisYear">Sales This Year</option>
-          <option value="previousYear">Sales Previous Year</option>
-          <option value="last5Years">Previous 5 Years Sales</option>
+          <option value="thisMonth">This Month</option>
+          <option value="thisYear">This Year</option>
+          <option value="previousYear">Previous Year</option>
+          <option value="last5Years">Last 5 Years</option>
         </select>
       </div>
 

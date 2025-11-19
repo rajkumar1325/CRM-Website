@@ -15,8 +15,11 @@ export default function Dashboard() {
   return (
     <>
         
-                  <div className='flex flex-col md:flex-row gap-2'>
-                     <Cards />
+                  <div className='flex flex-col md:flex-row gap-2 mt-4'>
+                     <div className='max-w-7/10'>
+                        <Cards darkMode={false}/>
+                     </div>
+
                      <GaugeCard />
                   </div>
 
