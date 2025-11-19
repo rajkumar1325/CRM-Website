@@ -50,13 +50,20 @@ function App() {
 
                   <Routes>
                      <Route path="/" element={<Dashboard />} />
-                     <Route path="/leads" element={<Leads />} />
+
+
+                     <Route path="/leads" 
+                     element={<Leads 
+                        darkMode={false} 
+                        searchQuery={search}/>} />
 
 
 
                      {/* //path linked to line87(navigation-section) --> sidebar */}
                      <Route path="/customers"
-                        element={<Customer darkMode={false} searchQuery={search} />}
+                        element={<Customer 
+                           darkMode={false} 
+                           searchQuery={search} />}
                      />
 
 

@@ -22,7 +22,7 @@ export const mockData = [
     source: "Referral",
     conversionDate: "2025-01-28",
     dealStatus: "active",
-    receivedAmount: 120000,
+    receivedAmount: 1000,
     purchaseDate : "2025-01-28",
   },
   {
@@ -439,6 +439,9 @@ export const mockData = [
 
 
 
+
+
+
 // Data for the 'Customers' table view
 export const customersData = [
   {
@@ -722,6 +725,8 @@ export const customersData = [
     profilePhoto: null,
   },
 ];
+
+
 
 
 
