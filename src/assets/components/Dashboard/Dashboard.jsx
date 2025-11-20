@@ -17,15 +17,15 @@ export default function Dashboard() {
         
                   <div className='flex flex-col md:flex-row gap-2 mt-4'>
                      <div className='max-w-7/10'>
-                        <Cards darkMode={false}/>
+                        <Cards darkMode={true}/>
                      </div>
 
-                     <GaugeCard />
+                     <GaugeCard darkMode={false}/>
                   </div>
 
                   <div className='flex flex-col justify-around gap-2 mt-2 md:flex-row'>
-                     <PieChart darkMode={true}/>
-                     <SalesChart />
+                     <PieChart darkMode={false}/>
+                     <SalesChart darkMode={false}/>
                   </div>
 
                   <div className='flex flex-col md:flex-row gap-2 mt-2'>

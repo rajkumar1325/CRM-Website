@@ -44,7 +44,7 @@ const salesData = {
   },
 };
 
-export default function SalesChart({ isDarkMode = 'f' }) {
+export default function SalesChart({ darkMode  }) {
 
   const [filter, setFilter] = useState("thisMonth");
 
@@ -59,8 +59,8 @@ export default function SalesChart({ isDarkMode = 'f' }) {
         data: salesData[filter].data,
         tension: 0.4,
         fill: true,
-        borderColor: isDarkMode ? "#4ADE80" : "#2563EB",
-        backgroundColor: isDarkMode
+        borderColor: darkMode ? "#4ADE80" : "#2563EB",
+        backgroundColor: darkMode
           ? "rgba(74, 222, 128, 0.2)"
           : "rgba(37, 99, 235, 0.2)",
       },
@@ -74,19 +74,19 @@ export default function SalesChart({ isDarkMode = 'f' }) {
       legend: {
         position: "top",
         labels: {
-          color: isDarkMode ? "#D1D5DB" : "#374151",
+          color: darkMode ? "#D1D5DB" : "#374151",
           font: { size: 11, weight: "bold" },
         },
       },
     },
     scales: {
       x: {
-        ticks: { color: isDarkMode ? "#D1D5DB" : "#374151" },
-        grid: { color: isDarkMode ? "#333" : "#E5E7EB" },
+        ticks: { color: darkMode ? "#D1D5DB" : "#374151" },
+        grid: { color: darkMode ? "#333" : "#E5E7EB" },
       },
       y: {
-        ticks: { color: isDarkMode ? "#D1D5DB" : "#374151" },
-        grid: { color: isDarkMode ? "#333" : "#E5E7EB" },
+        ticks: { color: darkMode ? "#D1D5DB" : "#374151" },
+        grid: { color: darkMode ? "#333" : "#E5E7EB" },
       },
     },
   };
@@ -97,7 +97,7 @@ export default function SalesChart({ isDarkMode = 'f' }) {
         w-full h-auto md:w-[50%] lg:w-[600px]
         p-4 sm:p-5 rounded-xl shadow-lg
         transition-all duration-500
-        ${isDarkMode ? "bg-[#21222D] text-gray-100" : "bg-white text-gray-900"}
+        ${darkMode ? "bg-[#21222D] text-gray-100" : "bg-white text-gray-900"}
       `}
     >
       {/* Header */}
@@ -111,7 +111,7 @@ export default function SalesChart({ isDarkMode = 'f' }) {
           onChange={handleChange}
           className={`
             border rounded-md text-sm px-3 py-2 transition
-            ${isDarkMode 
+            ${darkMode 
               ? "bg-gray-700 border-gray-600 text-gray-100 focus:ring-blue-500" 
               : "bg-gray-50 border-gray-300 text-gray-800 focus:ring-green-500"
             }

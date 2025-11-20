@@ -7,7 +7,9 @@ import {
   useGaugeState,
 } from "@mui/x-charts/Gauge";
 
-// --- Custom pointer {"https://mui.com/x/react-charts/gauge/"}
+
+
+// .................... custom pointer --Needle--- {"https://mui.com/x/react-charts/gauge/"}
 function GaugePointer() {
   const { valueAngle, outerRadius, cx, cy } = useGaugeState();
 
@@ -25,8 +27,7 @@ function GaugePointer() {
 
 
   return (
-
-    <g>
+    <>
       <circle cx={cx} cy={cy} r={5} fill="red" />
 
       {/* // needle */}
@@ -35,7 +36,7 @@ function GaugePointer() {
         stroke="red"
         strokeWidth={3}
       />
-    </g>
+    </>
   );
 }
 
@@ -59,13 +60,9 @@ function GaugePointer() {
 
 
 
+export default function EarningsCard({darkMode}) {
 
-
-// MAIN CARD
-
-export default function EarningsCard() {
-
-// defining totalEarning variable from mockData
+// defining and calculating totalEarning variable from mockData
   let TotalEarning = 0;
 
   mockData.forEach( (deal) =>{
@@ -76,37 +73,56 @@ export default function EarningsCard() {
   const progressPercentage = 80;
 
   return (
-    <div className="bg-[#21222D] text-white rounded-2xl p-6 w-full h-full md:w-3/10 shadow-lg mt-4">
-      {/* Header */}
+    <div className={`rounded-2xl p-4 w-full h-full md:w-3/10 shadow-lg  transition-all duration-300
+      ${darkMode ? "bg-[#21222D] text-white" : "bg-white text-gray-900"}`}>
+
+    {/* ..............................Heading */}
       <h2 className="text-lg font-semibold mb-2">Earnings</h2>
-      <p className="text-gray-400 text-sm">Total Earning</p>
 
-      {/* Amount (with explicit conversion upto 2 decimal pnts)*/}
-      <p className="sm:text-base md:text-xl lg:text-3xl font-bold text-[#7de0d6] mt-1">$ {TotalEarning.toFixed(2)}</p>
-
-      {/* Profit Info */}
-      <p className="text-gray-400 text-sm mt-1">
-        Profit is{" "}
-        <span className="text-[#7de0d6] font-medium">{progressPercentage}%</span> more than last
-        month
+      {/* Amount with 2 decimal places */}
+      <p
+        className={`sm:text-lg md:text-xl lg:text-3xl font-bold mt-1 
+          ${darkMode ? "text-[#7de0d6]" : "text-green-600"}
+        `}
+      >
+        $ {TotalEarning.toFixed(2)}
       </p>
 
-      {/* Gauge */}
-      <div className="flex justify-center items-center mt-6 w-full">
-        <div className="w-7/10 min-w-[150px] max-w-[300px]">
+
+
+      {/* Profit Info */}
+      <p className={`text-sm mt-1 ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+        Profit is{" "} 
+
+        <span className={`${darkMode ? "text-[#7de0d6]" : "text-green-700"} font-medium`}
+        >
+          {progressPercentage}%
+        </span>{" "} more than last month
+      </p>
+
+
+
+      {/* Gauge Chart*/}
+      <div className="flex justify-center items-center w-full">
+        <div className="w-full min-w-[150px] max-w-[300px]">
+
           <GaugeContainer
-            startAngle={-90}
-            endAngle={90}
+            startAngle={-100}
+            endAngle={100}
             value={progressPercentage}
+
+            // over-riding the custom CSS of MUI-material 
             sx={{
-              "& .MuiGauge-referenceArc": { fill: "#2e333d" },
-              "& .MuiGauge-valueArc": { fill: "#7de0d6" },
+              "& .MuiGauge-referenceArc": {fill: darkMode ? "#2e333d" : "#e5e7eb"},
+              "& .MuiGauge-valueArc": { fill: darkMode ? "#7de0d6" : "#22c55e",},
             }}
           >
             <GaugeReferenceArc />
             <GaugeValueArc />
             <GaugePointer />
-            {/* <GaugeLabel /> */}
+
+            {/* Custom label inside the chart for clear view of percentage */}
+            {/* <GaugeLabel /> */}    
           </GaugeContainer>
         </div>
       </div>
