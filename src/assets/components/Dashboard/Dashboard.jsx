@@ -14,23 +14,24 @@ import MeetingCard from './MeetingCard/MeetingCard.jsx';
 export default function Dashboard() {
   return (
     <>
-                  <div className='flex flex-col justify-around gap-2 mt-4'>
-                     <div>
+                  <div className='flex flex-col md:flex-row justify-around gap-2'>
+                     <div className='sm:w-7/10'>
                         <Cards darkMode={true}/>
                      </div>
 
-                     <GaugeCard darkMode={false}/>
+                     <GaugeCard darkMode={true}/>
+                     
                   </div>
 
-                  <div className='flex flex-col justify-between gap-2 mt-2'>
-                     <PieChart darkMode={false}/>
-                     <SalesChart darkMode={false}/>
+                  <div className='flex flex-col md:flex-row justify-between gap-2 mt-2'>
+                     <PieChart darkMode={true}/>
+                     <SalesChart darkMode={true}/>
                   </div>
 
-                  <div className='flex flex-col justify-between gap-2 mt-2'>
+                  <div className='flex flex-col md:flex-row justify-between gap-2 mt-2'>
                      <CustomerFulfilmentChart  darkMode={true}/>
-                     <TodoList />
-                     <MeetingCard />
+                     <TodoList darkMode={true}/>
+                     <MeetingCard darkMode={true}/>
                   </div>
                
     </>

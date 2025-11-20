@@ -10,35 +10,31 @@ import {
   ClipboardList,
 } from "lucide-react";
 
-import LogOut from "./log-out.svg?react"; // SVG icon (react component)
-import ProfileImg from "./profile.jpg"; // JPG image (NOT ?react)
+import LogOut from "./log-out.svg?react";
+import ProfileImg from "./profile.jpg";
 
-// ----------------------------------
-// ⚡ Helper: Extract initials (e.g., "Rohan Sharma" → "RS")
-// ----------------------------------
 const getInitials = (name) => {
-  if (!name) return "?";
-  const parts = name.trim().split(" ");
-  return (
-    (parts[0]?.[0] || "").toUpperCase() +
-    (parts[1]?.[0] || "").toUpperCase()
-  );
+  const parts = name.split(" ");
+  return parts[0][0].toUpperCase() + (parts[1]?.[0] || "").toUpperCase();
 };
 
 const Sidebar = () => {
-  // Simulated logged-in user
   const userName = "Rohan Sharma";
 
   const [isOpen, setIsOpen] = useState(true);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const location = useLocation();
 
-  // ----------------------------------
-  // 📱 Collapse on small screens
-  // ----------------------------------
+  // Handle auto-collapse on small screens
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 767) setIsOpen(false);
-      else setIsOpen(true);
+      if (window.innerWidth < 767) {
+        setIsSmallScreen(true);
+        setIsOpen(false);
+      } else {
+        setIsSmallScreen(false);
+        setIsOpen(true);
+      }
     };
 
     handleResize();
@@ -46,32 +42,40 @@ const Sidebar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleSidebar = () => setIsOpen((prev) => !prev);
+  const toggleSidebar = () => setIsOpen((x) => !x);
 
-  // ----------------------------------
-  // 🔗 Nav item component
-  // ----------------------------------
+  // Sidebar width depends on screen + collapse state
+  const sidebarWidth = isOpen ? "w-64" : isSmallScreen ? "w-12" : "w-20";
+
+  // NAV ITEM
   const NavItem = ({ to, label, Icon }) => {
     const isActive = location.pathname === to;
 
     return (
       <Link
         to={to}
-        className={`group relative flex items-center px-6 py-2 rounded-md mx-3 mb-2 transition-colors duration-200
-        ${
-          isActive
-            ? "text-green-500 bg-[#3e412c]"
-            : "hover:text-blue-300 text-gray-300"
-        }`}
+        className={`group relative flex items-center px-4 py-2   mb-2 rounded-md transition-all
+          ${isActive ? "text-green-500 bg-[#3e412c]" : "text-gray-300 hover:text-blue-300"}`}
       >
-        <Icon className="w-5 h-5 min-w-5" />
+        {/* Icon (small on mobile) */}
+        <Icon
+          className={`transition-all
+            ${isSmallScreen ? "w-4 h-4" : "w-5 h-5"}
+          `}
+        />
 
-        {isOpen && <span className="ml-3">{label}</span>}
+        {/* Label text (visible only when expanded) */}
+        {isOpen && (
+          <span className="ml-3 text-sm sm:text-base md:text-lg">
+            {label}
+          </span>
+        )}
 
+        {/* Tooltip when collapsed */}
         {!isOpen && (
           <span
-            className="absolute left-16 bg-gray-800 text-white text-xs px-2 py-1 rounded-md opacity-0 
-            group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 
+            group-hover:opacity-100 transition-all"
           >
             {label}
           </span>
@@ -80,114 +84,33 @@ const Sidebar = () => {
     );
   };
 
-  // ----------------------------------
-  // 🧱 MAIN SIDEBAR LAYOUT
-  // ----------------------------------
   return (
     <div
-      className={`h-auto bg-gradient-to-b from-[#3c6565] via-[#131d1d] to-[#1C2B2B] text-gray-400 flex flex-col justify-between
-      transition-all duration-300 ${isOpen ? "w-64" : "w-20"}`}
+      className={`
+        ${sidebarWidth}
+        h-auto flex flex-col justify-between
+        bg-gradient-to-b from-[#3c6565] via-[#131d1d] to-[#1C2B2B]
+        text-gray-300 transition-all duration-300
+      `}
     >
-      {/* ---------------- TOP SECTION ---------------- */}
+      {/* TOP SECTION */}
       <div>
-        {/* Sidebar Toggle + Profile */}
+        {/* Profile + toggle */}
         <div
-          className="flex items-center justify-between px-6 py-4 cursor-pointer"
+          className="flex items-center justify-center px-4 py-4 cursor-pointer"
           onClick={toggleSidebar}
         >
           <div className="flex flex-col items-center w-full">
-            {/* Avatar wrapper */}
-            <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-600 overflow-hidden border border-gray-500 shadow">
-              {/* If image exists show it */}
-              {ProfileImg ? (
-                <img
-                  src={ProfileImg}
-                  alt="User"
-                  className="h-full w-full object-cover"
-                  onError={(e) => (e.target.style.display = "none")}
-                />
-              ) : null}
-
-              {/* Fallback initials */}
-              {!ProfileImg && (
-                <span className="text-white font-bold text-lg">
-                  {getInitials(userName)}
-                </span>
-              )}
-            </div>
-
-            {/* Show name ONLY when sidebar expanded */}
-            {isOpen && (
-              <span className="text-white text-sm mt-2 font-semibold tracking-wide">
-                {userName}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* ---------------- NAVIGATION ---------------- */}
-        <nav className="mt-4">
-          <NavItem to="/" label="Home" Icon={Home} />
-          <NavItem to="/leads" label="Leads" Icon={UsersRound} />
-          <NavItem to="/customers" label="Customers" Icon={Users} />
-          <NavItem to="/support" label="Support" Icon={Headphones} />
-          <NavItem to="/deals" label="Deals" Icon={Handshake} />
-          <NavItem to="/reports" label="Reports" Icon={BarChart3} />
-          <NavItem
-            to="/taskAndActivities"
-            label="Task & Activities"
-            Icon={ClipboardList}
-          />
-        </nav>
-
-        {/* ---------------- TEAMS SECTION ---------------- */}
-        <div className="mt-6 px-6">
-          {isOpen && (
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
-              Your Teams
-            </h3>
-          )}
-
-          {[
-            ["H", "Heroicons"],
-            ["T", "Tailwind Labs"],
-            ["W", "Workcation"],
-          ].map(([abbr, name]) => (
+            {/* Avatar */}
             <div
-              key={name}
-              className="relative group flex items-center space-x-3 hover:bg-[#1e293b] rounded-md px-3 py-2 cursor-pointer transition"
+              className="
+                rounded-full overflow-hidden border border-gray-500 shadow
+                h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16
+                flex items-center justify-center
+              "
             >
-              <div className="h-6 w-6 flex items-center justify-center bg-[#1e293b] rounded-md text-sm font-medium text-gray-400">
-                {abbr}
-              </div>
-
-              {isOpen && <span>{name}</span>}
-
-              {!isOpen && (
-                <span
-                  className="absolute left-16 bg-gray-800 text-white text-xs px-2 py-1 rounded-md opacity-0 
-                  group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  {name}
-                </span>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ---------------- BOTTOM LOGOUT SECTION ---------------- */}
-      <div className="flex items-center px-6 py-4 border-t border-[#1e293b] relative">
-        {isOpen ? (
-          <>
-            {/* Profile image or initials */}
-            <div className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-600 overflow-hidden border border-gray-500 mr-3">
               {ProfileImg ? (
-                <img
-                  src={ProfileImg}
-                  alt="User"
-                  className="h-full w-full object-cover"
-                />
+                <img src={ProfileImg} className="h-full w-full object-cover" />
               ) : (
                 <span className="text-white font-bold text-lg">
                   {getInitials(userName)}
@@ -195,16 +118,43 @@ const Sidebar = () => {
               )}
             </div>
 
-            <div className="cursor-pointer text-red-500 hover:text-red-700 transition">
-              <p className="text-sm font-medium">Log Out</p>
-            </div>
+            {/* Name (only when open) */}
+            {isOpen && (
+              <span className="mt-2 font-semibold tracking-wide text-xs sm:text-sm md:text-base">
+                {userName}
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* NAVIGATION */}
+        <nav className="mt-4">
+          <NavItem to="/" label="Home" Icon={Home} />
+          <NavItem to="/leads" label="Leads" Icon={UsersRound} />
+          <NavItem to="/customers" label="Customers" Icon={Users} />
+          <NavItem to="/support" label="Support" Icon={Headphones} />
+          <NavItem to="/deals" label="Deals" Icon={Handshake} />
+          <NavItem to="/reports" label="Reports" Icon={BarChart3} />
+          <NavItem to="/taskAndActivities" label="Tasks" Icon={ClipboardList} />
+        </nav>
+      </div>
+
+
+
+      {/* BOTTOM SECTION */}
+      <div className="flex items-center px-4 py-4 border-t border-[#1e293b] relative">
+        {isOpen ? (
+          <>
+            <LogOut className="w-6 h-6 text-red-500 mr-3" />
+            <p className="text-sm font-medium text-red-500">Log Out</p>
           </>
         ) : (
-          <div className="group cursor-pointer hover:text-red-500 transition">
-            <LogOut />
+          <div className="group cursor-pointer">
+            <LogOut className="text-red-500 w-5 h-5" />
+
             <span
-              className="absolute left-16 bg-gray-800 text-red-900 text-xs px-2 py-1 rounded-md opacity-0 
-              group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute left-14 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 
+              group-hover:opacity-100 transition-all"
             >
               Log Out
             </span>

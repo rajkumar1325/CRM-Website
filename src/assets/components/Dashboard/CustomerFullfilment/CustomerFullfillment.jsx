@@ -12,7 +12,7 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
-export default function CustomerFulfilmentChart({ isDark }) {
+export default function CustomerFulfilmentChart({ darkMode }) {
 
   const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -52,13 +52,13 @@ export default function CustomerFulfilmentChart({ isDark }) {
     scales: {
       x: {
         grid: { display: false },
-        ticks: { color: isDark ? "#d1d5db" : "#4b5563" }, // light/dark text
+        ticks: { color: darkMode ? "#d1d5db" : "#4b5563" }, // light/dark text
       },
       y: {
         grid: {
-          color: isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+          color: darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
         },
-        ticks: { color: isDark ? "#d1d5db" : "#4b5563" },
+        ticks: { color: darkMode ? "#d1d5db" : "#4b5563" },
       },
     },
   };
@@ -66,7 +66,7 @@ export default function CustomerFulfilmentChart({ isDark }) {
   return (
     <div
       className={`rounded-2xl p-4 shadow-lg w-full max-w-sm mx-auto transition-all duration-300
-        ${isDark ? "bg-[#1e1f2e] text-white" : "bg-white text-gray-900"}
+        ${darkMode ? "bg-[#1e1f2e] text-white" : "bg-white text-gray-900"}
       `}
     >
       {/* Title */}
@@ -80,18 +80,18 @@ export default function CustomerFulfilmentChart({ isDark }) {
       {/* Divider Section */}
       <div
         className={`border-t mt-4 pt-3 flex justify-around text-center 
-        ${isDark ? "border-gray-700" : "border-gray-300"}`}
+        ${darkMode ? "border-gray-700" : "border-gray-300"}`}
       >
         {/* Last Month */}
         <div>
           <div
             className={`flex items-center justify-center gap-2 text-sm 
-            ${isDark ? "text-gray-300" : "text-gray-600"}`}
+            ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
             <span className="w-2 h-2 rounded-full bg-[#7de0d6]"></span>
             <span>Last Month</span>
           </div>
-          <div className={`${isDark ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
+          <div className={`${darkMode ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
             $4,087
           </div>
         </div>
@@ -100,12 +100,12 @@ export default function CustomerFulfilmentChart({ isDark }) {
         <div>
           <div
             className={`flex items-center justify-center gap-2 text-sm 
-            ${isDark ? "text-gray-300" : "text-gray-600"}`}
+            ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
             <span className="w-2 h-2 rounded-full bg-[#d98cf4]"></span>
             <span>This Month</span>
           </div>
-          <div className={`${isDark ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
+          <div className={`${darkMode ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
             $5,506
           </div>
         </div>

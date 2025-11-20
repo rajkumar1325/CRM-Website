@@ -1,101 +1,94 @@
 import React, { useState } from "react";
 
-// importing icons as a react component.
-import BellIcon from "../../assets/components/Icons/bell-notification.svg?react"; //notification-btn
-import Setting from "../../assets/components/Icons/settings.svg?react"//setting-btn
-import Sun from "../../assets/components/Icons/sun-light.svg?react" //light=-btn
-import Moon from "../../assets/components/Icons/half-moon.svg?react" //dark-btn
-import Profile from "../../assets/components/Icons/profile-circle.svg?react" //dark-btn
+import BellIcon from "../../assets/components/Icons/bell-notification.svg?react";
+import Setting from "../../assets/components/Icons/settings.svg?react";
+import Sun from "../../assets/components/Icons/sun-light.svg?react";
+import Moon from "../../assets/components/Icons/half-moon.svg?react";
+import Profile from "../../assets/components/Icons/profile-circle.svg?react";
 
-
-function Topbar({setSearch, searchPlaceHolder, isDark, setIsDark}) {
-      
-    const handleNotification = () => {
-    console.log("Notification button clicked!");
-    alert("Notification Button clicked");
-  };
-
-  const handleTheme = () => {
-   setIsDark(!isDark);
-  };
-
-  const handleSetting = () => {
-    console.log("Setting button clicked!");
-    alert("Setting Button clicked");
-  };
-
-  const handleProfile = () => {
-    console.log("Profile button clicked!");
-    alert("Profile Button clicked");
-  };
-
-
+function Topbar({ setSearch, searchPlaceHolder, isDark, setIsDark }) {
   return (
-<div className={`flex items-center justify-between w-full p-2   ${isDark ? "bg-[#171821]" : "bg-gray-200"}`}>
-
-  
-      {/* Search Bar */}
-      <div className="flex-1 max-w-7/10 ">
+    <div
+      className={`flex items-center justify-between w-full p-2 mb-6 
+      ${isDark ? "bg-[#171821]" : "bg-gray-200"}`}
+    >
+      {/* SEARCH BAR */}
+      <div className="flex-1 max-w-[70%]">
         <input
           type="text"
-          id="search Here..."
-          onChange={(e)=> setSearch(e.target.value)}
-          className={`w-full px-4 py-2 rounded-full border text-sm focus:ring-2 focus:ring-blue-500 
-          transition-all duration-300
-          ${
-            isDark
-              ? "bg-[#21222D] border-gray-700 text-gray-100 placeholder-gray-400"
-              : "bg-white border-gray-300 text-gray-800 placeholder-gray-500"
-          }`}
-          placeholder= {searchPlaceHolder}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder={searchPlaceHolder}
+          className={`
+            w-full rounded-full border transition-all duration-300
+            px-3 py-1 text-xs
+            sm:px-4 sm:py-2 sm:text-sm
+            md:text-base
 
-
-          
+            ${
+              isDark
+                ? "bg-[#21222D] border-gray-700 text-gray-100 placeholder-gray-400"
+                : "bg-white border-gray-300 text-gray-800 placeholder-gray-500"
+            }
+          `}
         />
       </div>
 
 
-      {/* Notification Buttons */}
-      <div className="flex gap-1">
+
+
+
+
+
+
+
+
+      {/* RIGHT SIDE ICONS */}
+      <div className="flex gap-1 sm:gap-2 ml-2">
+
+        {/* Notification */}
         <button
-          onClick={handleNotification}
-          className="p-1 rounded-full hover:bg-[#1f4024] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100 hover:text-blue-100"
-          aria-label="Notifications"
+          className="
+            p-1 sm:p-2 rounded-full 
+            hover:bg-[#1f4024] transition duration-200
+          "
         >
           <BellIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         </button>
 
-
+        {/* Theme Toggle */}
         <button
-          onClick={handleTheme}
-          className="p-1 rounded-full hover:bg-[#1f4024] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100 hover:text-blue-100"
-          aria-label="Notifications"
+          onClick={() => setIsDark(!isDark)}
+          className="
+            p-1 sm:p-2 rounded-full 
+            hover:bg-[#1f4024] transition duration-200
+          "
         >
-          {isDark ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
-
+          {isDark ? (
+            <Sun className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          ) : (
+            <Moon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          )}
         </button>
 
-
+        {/* Settings */}
         <button
-          onClick={handleSetting}
-          className="p-1 rounded-full hover:bg-[#1f4024] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100 hover:text-blue-100"
-          aria-label="Notifications"
+          className="
+            p-1 sm:p-2 rounded-full 
+            hover:bg-[#1f4024] transition duration-200
+          "
         >
           <Setting className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         </button>
 
-
+        {/* Profile */}
         <button
-          onClick={handleProfile}
-          className="p-1 rounded-full hover:bg-[#1f4024] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-100 hover:text-blue-100"
-          aria-label="Notifications"
+          className="
+            p-1 sm:p-2 rounded-full
+            hover:bg-[#1f4024] transition duration-200
+          "
         >
           <Profile className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         </button>
-
-
-
-
       </div>
     </div>
   );

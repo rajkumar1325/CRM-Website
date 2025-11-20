@@ -6,7 +6,7 @@ import Active from "./icons/active.svg?react";
 import Close from "./icons/close.svg?react";
 import Converted from "./icons/conversion-rate.svg?react";
 
-export default function Cards({ isDark = "" }) {
+export default function Cards({ darkMode}) {
   const TotalLeads = Object.keys(mockData).length;
 
   // checking active or closed leads
@@ -24,7 +24,7 @@ export default function Cards({ isDark = "" }) {
   // individual card, Outer-style .......shared among all 
   const cardStyle = `flex justify-center items-center w-full  md:w-[10.5em] rounded-xl
     ${
-    isDark ? "bg-[#171821] text-white" : "bg-white text-gray-900 shadow"
+    darkMode ? "bg-[#171821] text-white" : "bg-white text-gray-900 shadow"
     }
 `;
 
@@ -38,7 +38,7 @@ export default function Cards({ isDark = "" }) {
     <>
       <div
         className={`w-full rounded-2xl p-4 overflow-hidden transition-all duration-300
-            ${isDark ? "bg-[#21222D] text-white" : "bg-gray-200 text-gray-900"}`}
+            ${darkMode ? "bg-[#21222D] text-white" : "bg-gray-200 text-gray-900"}`}
       >
         <h1 className="font-semibold text-3xl m-4">Leads Summary</h1>
 

@@ -38,17 +38,21 @@ function App() {
             <div className={`flex ${dark ? 'bg-[#171821]' : 'bg-gray-100'}`}>
                <Sidebar/>
 
-               <main className='flex-grow p-4 bg-[#171821] w-full overflow-x-hidden'>
+               <main className='flex-grow p-3 bg-[#171821] w-full overflow-x-hidden'>
 
-                  {/* passing prop inside the topbar */}
-                  <Topbar 
-                     setSearch={setSearch} 
-                     searchPlaceHolder = {getPlaceHolder()}
-                     isDark = {dark}
-                     setIsDark = {setDark}
-                     />
+                     {/* passing prop inside the topbar */}
+                     
+                           <Topbar 
+                           setSearch={setSearch} 
+                           searchPlaceHolder = {getPlaceHolder()}
+                           isDark = {dark}
+                           setIsDark = {setDark}
+                              />
+                     
+                     
 
-                  <Routes>
+
+                  <Routes >
                      <Route path="/" element={<Dashboard />} />
 
 
