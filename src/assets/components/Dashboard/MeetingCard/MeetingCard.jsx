@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function MeetingCard() {
-  // ✅ Meeting data with JS Date objects
+export default function MeetingCard({darkMode = false}) {
+  //  Meeting data with JS Date objects
   const meetings = [
     {
       id: 1,
@@ -30,7 +30,7 @@ export default function MeetingCard() {
     },
   ];
 
-  // ✅ Format date & time
+  //  Format date & time
   const formatDate = (date) => {
     const options = { month: "short", day: "numeric", year: "numeric" };
     return date.toLocaleDateString("en-US", options);
@@ -45,8 +45,10 @@ export default function MeetingCard() {
   };
 
   return (
-    <div className="bg-[#21212D] text-white p-5 rounded-2xl shadow-lg w-full md:w-4/10">
+    <div className={` p-5 rounded-2xl shadow-lg w-full md:w-5/10  
+        ${darkMode ? "bg-[#21212D] text-white" : "bg-white text-[#21212D]"}`}>
       <h2 className="text-lg font-semibold mb-5">Upcoming Meetings</h2>
+
 
       <div className="space-y-4">
         {meetings.map((meeting) => (
@@ -54,13 +56,15 @@ export default function MeetingCard() {
             key={meeting.id}
             className="flex justify-between items-start border-b border-gray-800 pb-3 last:border-0"
           >
-            {/* Left: Meeting title */}
-            <p className="text-sm font-medium text-gray-200">
+            {/* Left sode: Meeting title */}
+            <p className={` text-sm font-medium  ${darkMode ? "text-gray-200" : "text-gray-800"}`}>
               {meeting.title}
             </p>
 
-            {/* Right: Date & Time */}
-            <div className="text-right text-xs text-gray-400 leading-tight">
+
+
+            {/* Right side: Date & Time */}
+            <div className={` text-right text-xs  leading-tight  ${darkMode ? "text-gray-400" : "text-gray-800"}`}>
               <p>{formatDate(meeting.date)}</p>
               <p>{formatTime(meeting.date)}</p>
             </div>

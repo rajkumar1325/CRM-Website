@@ -194,7 +194,7 @@ export default function SalesChart({ darkMode }) {
   return (
     <div
       className={`
-        w-full max-w-7/10 
+        w-full md:w-7/10
         p-3 sm:p-4 
         rounded-xl shadow-lg
         transition-all duration-300
