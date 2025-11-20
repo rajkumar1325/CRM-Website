@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TodoIcon from "./task-list.svg?react";
 
-export default function TodoList() {
+export default function TodoList({darkMode = false}) {
   // 🧩 Main task list
   const [tasks, setTasks] = useState([
     { id: 1, text: "Follow up with John Doe", done: true },
@@ -11,14 +11,14 @@ export default function TodoList() {
     { id: 5, text: "Schedule product demo", done: false },
   ]);
 
-  // 💾 Deleted task history
+  // .................................................... Deleted task history
   const [history, setHistory] = useState([]);
 
-  // 🎯 UI states
+  // ............................................ UI states
   const [showMenu, setShowMenu] = useState(false);
   const [newTask, setNewTask] = useState("");
 
-  // ✅ Toggle task completion
+  // ....................... Toggle task completion
   const toggleTask = (id) => {
     setTasks((prev) =>
       prev.map((t) =>
@@ -53,17 +53,21 @@ export default function TodoList() {
   const closeDialog = () => setShowMenu(false);
 
   return (
-    <div className="w-full md:w-3/10 bg-[#21212D]  text-white p-5 rounded-2xl shadow-lg relative">
-      {/* 🔹 Header */}
+    <div className={`w-full h-full md:w-5/10  p-5 rounded-2xl shadow-lg relative  
+        ${darkMode ? "bg-[#21212D] text-white"  : "bg-white text-black"}`
+        }>
+
+
+      {/*  Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold">Tasks</h2>
         <TodoIcon
           onClick={handleTaskMenu}
-          className="w-5 h-5 text-gray-400 cursor-pointer hover:text-gray-200 transition"
+          className="w-5 h-5  cursor-pointer "
         />
       </div>
 
-      {/* 📋 Task List */}
+      {/*  Task List */}
       <div className="space-y-3 mb-4">
         {tasks.map((task) => (
           <div
@@ -74,6 +78,8 @@ export default function TodoList() {
               className="flex items-center space-x-3"
               onClick={() => toggleTask(task.id)}
             >
+
+              {/* task list checkbox */}
               <input
                 type="checkbox"
                 checked={task.done}
@@ -83,15 +89,17 @@ export default function TodoList() {
               <span
                 className={`text-sm ${
                   task.done
-                    ? "line-through text-gray-400"
-                    : "text-gray-200"
+                    ? darkMode ? "line-through text-gray-200" : "line-through text-gray-400"
+                    : darkMode ? "text-gray-200" : "text-gray-950"
                 }`}
               >
                 {task.text}
               </span>
             </div>
 
-            {/* 🗑 Delete Button */}
+
+
+            {/*  Delete Button */}
             <button
               onClick={() => deleteTask(task.id)}
               className="text-gray-500 hover:text-red-400 text-xs"
@@ -102,9 +110,15 @@ export default function TodoList() {
         ))}
       </div>
 
+
+
       {/* ➕ Add/Delete Menu (Dialog Box) */}
       {showMenu && (
-        <div className="absolute top-12 right-5 bg-[#1c2434] border border-gray-700 rounded-lg p-4 w-64 shadow-xl z-10">
+        <div className= {`absolute top-12 right-5  border border-gray-700 rounded-lg p-4 w-64 shadow-xl z-10 
+              ${darkMode ?
+                  "bg-[#1c2434] text-white" : " bg-[#f3f4f6] text-black"
+              }`
+              }>
           {/* Header with Close Button */}
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-sm font-semibold">Manage Tasks</h3>
@@ -123,7 +137,10 @@ export default function TodoList() {
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
               placeholder="Enter new task..."
-              className="w-full px-2 py-1 rounded bg-[#0f1623] border border-gray-600 text-sm focus:outline-none focus:border-gray-400"
+              className= {`w-full px-2 py-1 rounded  border border-gray-600 text-sm focus:outline-none focus:border-gray-400  
+                    ${darkMode ?
+                  "bg-[#1c2434] text-white" : " bg-[#f3f4f6] text-black"
+              }}`}
             />
             <button
               onClick={addTask}
@@ -135,7 +152,7 @@ export default function TodoList() {
 
           {/* Task History Section */}
           <div>
-            <h4 className="text-xs text-gray-400 mb-1">Deleted History</h4>
+            <h4 className="text-xs text-red-400 mb-1">Deleted History</h4>
             {history.length === 0 ? (
               <p className="text-xs text-gray-500 italic">No deleted tasks</p>
             ) : (

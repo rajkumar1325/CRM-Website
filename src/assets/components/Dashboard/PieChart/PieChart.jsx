@@ -54,7 +54,7 @@ export default function LeadsPieChart({ darkMode }) {
     return (
         <div
             className={`${bgClass} rounded-2xl p-6 shadow-lg 
-                        w-full md:w-5/10 max-w-[400px] flex flex-col items-center`}
+                        w-full md:w-5/10  flex flex-col items-center`}
         >
             {/* Title */}
             <h2 className="text-lg font-semibold mb-4">Lead Distribution</h2>
