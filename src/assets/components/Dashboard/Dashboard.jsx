@@ -29,7 +29,7 @@ export default function Dashboard() {
                   </div>
 
                   <div className='flex flex-col md:flex-row gap-2 mt-2'>
-                     <CustomerFulfilmentChart />
+                     <CustomerFulfilmentChart  darkMode={true}/>
                      <TodoList />
                      <MeetingCard />
                   </div>

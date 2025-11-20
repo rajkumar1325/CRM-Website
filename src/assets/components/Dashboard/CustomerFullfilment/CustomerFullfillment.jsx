@@ -10,32 +10,30 @@ import {
   Legend,
 } from "chart.js";
 
-// Register Chart.js modules for line charts
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
-export default function CustomerFulfilmentChart() {
-  // x-axis labels
+export default function CustomerFulfilmentChart({ isDark }) {
+
   const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  //  Chart data — two datasets for "Last Month" and "This Month"
   const data = {
     labels,
     datasets: [
       {
         label: "Last Month",
         data: [4000, 5000, 4200, 3900, 4100, 4300, 4087],
-        borderColor: "#A9DFD8", // teal line
-        backgroundColor: "rgba(125, 224, 114, 0.2)", // translucent bg color
-        fill: true, // enable area fill below line
-        tension: 0.1, // straight curve
+        borderColor: "#7de0d6",
+        backgroundColor: "rgba(125, 224, 214, 0.2)",
+        fill: true,
+        tension: 0.1,
         pointRadius: 4,
         pointHoverRadius: 6,
       },
       {
         label: "This Month",
         data: [4800, 4500, 4700, 4300, 4400, 4900, 5506],
-        borderColor: "#d98cf4", // purple line
-        backgroundColor: "rgba(217, 140, 244, 0.2)", // translucent purple bg
+        borderColor: "#d98cf4",
+        backgroundColor: "rgba(217, 140, 244, 0.2)",
         fill: true,
         tension: 0.1,
         pointRadius: 4,
@@ -44,60 +42,72 @@ export default function CustomerFulfilmentChart() {
     ],
   };
 
-  // Chart configuration options
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { display: false }, // we'll make our own custom legend
+      legend: { display: false },
       tooltip: { enabled: true },
     },
     scales: {
-      x: { //x-axis legend
+      x: {
         grid: { display: false },
-        ticks: { color: "#9ca3af" }, // gray-400
+        ticks: { color: isDark ? "#d1d5db" : "#4b5563" }, // light/dark text
       },
       y: {
-        grid: { color: "rgba(255,255,255,0.1)" },
-        ticks: { color: "#9ca3af" },
+        grid: {
+          color: isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+        },
+        ticks: { color: isDark ? "#d1d5db" : "#4b5563" },
       },
     },
   };
 
   return (
-    // 🔲 Main Card Container
-    <div className="bg-[#1e1f2e] text-white rounded-2xl p-4 shadow-lg w-full max-w-sm mx-auto">
-      
-      {/* 🏷️ Title */}
-      <div className="mb-3">
-        <h2 className="text-lg font-semibold">Customer Fulfilment</h2>
-      </div>
+    <div
+      className={`rounded-2xl p-4 shadow-lg w-full max-w-sm mx-auto transition-all duration-300
+        ${isDark ? "bg-[#1e1f2e] text-white" : "bg-white text-gray-900"}
+      `}
+    >
+      {/* Title */}
+      <h2 className="text-lg font-semibold mb-3">Customer Fulfilment</h2>
 
-      {/* 📈 Line Chart Area */}
+      {/* Chart Area */}
       <div className="h-52">
         <Line data={data} options={options} />
       </div>
 
-
-
-      {/* Divider Lower line */}
-      <div className="border-t border-gray-700 mt-4 pt-3 flex justify-around text-center">
-        {/* Left Block */}
+      {/* Divider Section */}
+      <div
+        className={`border-t mt-4 pt-3 flex justify-around text-center 
+        ${isDark ? "border-gray-700" : "border-gray-300"}`}
+      >
+        {/* Last Month */}
         <div>
-          <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+          <div
+            className={`flex items-center justify-center gap-2 text-sm 
+            ${isDark ? "text-gray-300" : "text-gray-600"}`}
+          >
             <span className="w-2 h-2 rounded-full bg-[#7de0d6]"></span>
             <span>Last Month</span>
           </div>
-          <div className="font-semibold mt-1">$4,087</div>
+          <div className={`${isDark ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
+            $4,087
+          </div>
         </div>
 
-        {/* Right Block */}
+        {/* This Month */}
         <div>
-          <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+          <div
+            className={`flex items-center justify-center gap-2 text-sm 
+            ${isDark ? "text-gray-300" : "text-gray-600"}`}
+          >
             <span className="w-2 h-2 rounded-full bg-[#d98cf4]"></span>
             <span>This Month</span>
           </div>
-          <div className="font-semibold mt-1">$5,506</div>
+          <div className={`${isDark ? "text-white" : "text-gray-900"} font-semibold mt-1`}>
+            $5,506
+          </div>
         </div>
       </div>
     </div>
