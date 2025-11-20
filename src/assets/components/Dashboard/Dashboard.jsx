@@ -16,7 +16,7 @@ export default function Dashboard() {
     <>
         
                   <div className='flex flex-col md:flex-row gap-2 mt-4'>
-                     <div className='max-w-7/10'>
+                     <div className='w-7/10'>
                         <Cards darkMode={true}/>
                      </div>
 

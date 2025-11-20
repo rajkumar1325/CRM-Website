@@ -12,7 +12,6 @@
  * 
  *  
  */
-
 export const mockData = [
   {
     id: 267881,
@@ -23,7 +22,7 @@ export const mockData = [
     conversionDate: "2025-01-28",
     dealStatus: "active",
     receivedAmount: 1000,
-    purchaseDate : "2025-01-28",
+    purchaseDate: "2025-01-28 14:22",
   },
   {
     id: 498276,
@@ -34,8 +33,7 @@ export const mockData = [
     conversionDate: "2025-02-14",
     dealStatus: "close",
     receivedAmount: 95000,
-    purchaseDate : "2025-02-28"
-
+    purchaseDate: "2025-02-28 11:45",
   },
   {
     id: 732145,
@@ -46,7 +44,7 @@ export const mockData = [
     conversionDate: "2025-03-22",
     dealStatus: "close",
     receivedAmount: 175000,
-    purchaseDate : "2025-01-22"
+    purchaseDate: "2025-01-22 16:33",
   },
   {
     id: 812364,
@@ -57,7 +55,7 @@ export const mockData = [
     conversionDate: "2025-04-01",
     dealStatus: "close",
     receivedAmount: 140000,
-    purchaseDate : "2025-01-18"
+    purchaseDate: "2025-01-18 10:12",
   },
   {
     id: 964523,
@@ -68,7 +66,7 @@ export const mockData = [
     conversionDate: "2025-04-18",
     dealStatus: "close",
     receivedAmount: 210000,
-    purchaseDate : "2015-01-28"
+    purchaseDate: "2015-01-28 13:40",
   },
   {
     id: 174862,
@@ -79,7 +77,7 @@ export const mockData = [
     conversionDate: "2025-05-09",
     dealStatus: "close",
     receivedAmount: 88000,
-    purchaseDate : "2025-11-28"
+    purchaseDate: "2025-11-28 19:55",
   },
   {
     id: 653217,
@@ -90,7 +88,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 165000,
-    purchaseDate : "2025-01-01"
+    purchaseDate: "2025-01-01 12:05",
   },
   {
     id: 762931,
@@ -101,7 +99,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-02"
+    purchaseDate: "2025-01-02 17:50",
   },
   {
     id: 849523,
@@ -112,7 +110,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-03"
+    purchaseDate: "2025-01-03 09:48",
   },
   {
     id: 951246,
@@ -123,7 +121,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-04"
+    purchaseDate: "2025-01-04 18:32",
   },
   {
     id: 103852,
@@ -134,7 +132,7 @@ export const mockData = [
     conversionDate: "2024-01-15",
     dealStatus: "close",
     receivedAmount: 110000,
-    purchaseDate : "2025-01-05"
+    purchaseDate: "2025-01-05 12:59",
   },
   {
     id: 118945,
@@ -145,7 +143,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2025-01-06"
+    purchaseDate: "2025-01-06 11:20",
   },
   {
     id: 129478,
@@ -156,7 +154,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-07"
+    purchaseDate: "2025-01-07 15:05",
   },
   {
     id: 137592,
@@ -167,7 +165,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-08"
+    purchaseDate: "2025-01-08 14:10",
   },
   {
     id: 148236,
@@ -178,7 +176,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-06-09"
+    purchaseDate: "2025-06-09 19:45",
   },
   {
     id: 159847,
@@ -189,7 +187,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-04-28"
+    purchaseDate: "2025-04-28 09:55",
   },
   {
     id: 163924,
@@ -200,7 +198,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2025-01-10"
+    purchaseDate: "2025-01-10 13:10",
   },
   {
     id: 174658,
@@ -211,7 +209,7 @@ export const mockData = [
     conversionDate: "2024-02-20",
     dealStatus: "close",
     receivedAmount: 132000,
-    purchaseDate : "2025-02-15"
+    purchaseDate: "2025-02-15 11:42",
   },
   {
     id: 186523,
@@ -222,7 +220,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2025-04-23"
+    purchaseDate: "2025-04-23 10:34",
   },
   {
     id: 197351,
@@ -233,7 +231,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2021-01-28"
+    purchaseDate: "2021-01-28 14:45",
   },
   {
     id: 203467,
@@ -244,7 +242,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2022-01-28"
+    purchaseDate: "2022-01-28 15:58",
   },
   {
     id: 219456,
@@ -255,7 +253,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2023-01-28"
+    purchaseDate: "2023-01-28 17:20",
   },
   {
     id: 223785,
@@ -266,7 +264,7 @@ export const mockData = [
     conversionDate: "2024-03-05",
     dealStatus: "close",
     receivedAmount: 98000,
-    purchaseDate : "2011-01-28"
+    purchaseDate: "2011-01-28 13:19",
   },
   {
     id: 234871,
@@ -277,7 +275,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2012-01-28"
+    purchaseDate: "2012-01-28 18:00",
   },
   {
     id: 247953,
@@ -288,7 +286,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2014-01-28"
+    purchaseDate: "2014-01-28 11:35",
   },
   {
     id: 258417,
@@ -299,7 +297,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2001-01-28"
+    purchaseDate: "2001-01-28 16:40",
   },
   {
     id: 268934,
@@ -310,7 +308,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2002-01-28"
+    purchaseDate: "2002-01-28 14:48",
   },
   {
     id: 279846,
@@ -321,7 +319,7 @@ export const mockData = [
     conversionDate: "2025-01-28",
     dealStatus: "active",
     receivedAmount: 15000,
-    purchaseDate : "2003-01-28"
+    purchaseDate: "2003-01-28 10:50",
   },
   {
     id: 289561,
@@ -332,7 +330,7 @@ export const mockData = [
     conversionDate: "2025-02-14",
     dealStatus: "close",
     receivedAmount: 12000,
-    purchaseDate : "2004-01-28"
+    purchaseDate: "2004-01-28 09:55",
   },
   {
     id: 299817,
@@ -343,7 +341,7 @@ export const mockData = [
     conversionDate: "2025-03-22",
     dealStatus: "active",
     receivedAmount: 18000,
-    purchaseDate : "2005-01-28"
+    purchaseDate: "2005-01-28 12:12",
   },
   {
     id: 306784,
@@ -354,7 +352,7 @@ export const mockData = [
     conversionDate: "2025-04-01",
     dealStatus: "close",
     receivedAmount: 20000,
-    purchaseDate : "2006-01-28"
+    purchaseDate: "2006-01-28 15:18",
   },
   {
     id: 312958,
@@ -365,7 +363,7 @@ export const mockData = [
     conversionDate: "2025-04-18",
     dealStatus: "active",
     receivedAmount: 22000,
-    purchaseDate : "2007-01-28"
+    purchaseDate: "2007-01-28 11:30",
   },
   {
     id: 324879,
@@ -376,7 +374,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate : "2008-01-28"
+    purchaseDate: "2008-01-28 19:33",
   },
   {
     id: 336512,
@@ -387,7 +385,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2025-03-28"
+    purchaseDate: "2025-03-28 18:30",
   },
   {
     id: 347916,
@@ -398,7 +396,7 @@ export const mockData = [
     conversionDate: "2024-01-15",
     dealStatus: "close",
     receivedAmount: 14000,
-    purchaseDate : "2025-01-29"
+    purchaseDate: "2025-11-10 20:40",
   },
   {
     id: 358724,
@@ -409,7 +407,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2025-01-30"
+    purchaseDate: "2025-11-04 11:55",
   },
   {
     id: 369528,
@@ -420,7 +418,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate : "2025-01-31"
+    purchaseDate: "2025-01-31 14:25",
   },
   {
     id: 372814,
@@ -431,7 +429,7 @@ export const mockData = [
     conversionDate: "2024-02-20",
     dealStatus: "close",
     receivedAmount: 17500,
-    purchaseDate : "2025-06-22"
+    purchaseDate: "2025-06-22 16:45",
   },
 ];
 
@@ -452,10 +450,10 @@ export const customersData = [
     phone: "+1 (555) 123-4567",
     email: "john.doe@acmecorp.com",
     product: "CRM Pro Subscription",
-    purchaseDate: "2025-08-10",
+    purchaseDate: "2024-08-10",
     purchaseTime: "10:30",
     status: "Active",
-    value: 1200,
+    value: 12000,
     profilePhoto: null,
   },
   {
@@ -466,7 +464,7 @@ export const customersData = [
     phone: "+1 (650) 555-2412",
     email: "sarah.kim@innovate.inc",
     product: "Analytics Suite",
-    purchaseDate: "2025-07-22",
+    purchaseDate: "2023-07-22",
     purchaseTime: "14:05",
     status: "closed",
     value: 4500,

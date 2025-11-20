@@ -21,11 +21,18 @@ export default function Cards({ isDark = "" }) {
   // conversion rate
   const ConversionRate = (ClosedLeads / TotalLeads) * 100;
 
-  // individual card style shared among all 
-  const cardStyle = `flex justify-center item-center w-full  md:w-[12em] rounded-xl     ${
+  // individual card, Outer-style .......shared among all 
+  const cardStyle = `flex justify-center item-center w-full  md:w-[10.5em] rounded-xl
+    ${
     isDark ? "bg-[#171821] text-white" : "bg-white text-gray-900 shadow"
-  }
+    }
 `;
+
+  // inner container Styling------- shared styling
+    const individualtemStyle = 'w-[9em] m-5 flex md:flex-col ';
+
+
+
 
   return (
     <>
@@ -41,7 +48,7 @@ export default function Cards({ isDark = "" }) {
 
           {/* individual items */}
           <div className={cardStyle}>
-            <div className="w-[9em] m-5 flex md:flex-col ">
+            <div className= {individualtemStyle}>
               <div className="mb-4 mr-4 flex items-center">
                 <Card1 />
               </div>
@@ -59,7 +66,7 @@ export default function Cards({ isDark = "" }) {
 
 
           <div className={cardStyle}>
-            <div className="w-[9em] m-5  flex   md:flex-col">
+            <div className={individualtemStyle}>
               <div className="mb-4 mr-4 flex items-center">
                 <Active />
               </div>
@@ -75,7 +82,7 @@ export default function Cards({ isDark = "" }) {
 
 
           <div className={cardStyle}>
-            <div className="w-[9em] m-5 flex md:flex-col">
+            <div className={individualtemStyle}>
               <div className="mb-4 mr-4 flex items-center">
                 <Close />
               </div>
@@ -91,7 +98,7 @@ export default function Cards({ isDark = "" }) {
 
 
           <div className={cardStyle}>
-            <div className="w-[9em] m-5 flex md:flex-col">
+            <div className={individualtemStyle}>
               <div className="mb-4 mr-4 flex items-center">
                 <Converted />
               </div>
