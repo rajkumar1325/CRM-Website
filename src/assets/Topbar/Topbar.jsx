@@ -1,29 +1,41 @@
 import React, { useState } from "react";
 
-import BellIcon from "../../assets/components/Icons/bell-notification.svg?react";
-import Setting from "../../assets/components/Icons/settings.svg?react";
-import Sun from "../../assets/components/Icons/sun-light.svg?react";
-import Moon from "../../assets/components/Icons/half-moon.svg?react";
-import Profile from "../../assets/components/Icons/profile-circle.svg?react";
+import { BellRing } from 'lucide-react';
+
+
+import BellIcon from "./Icons/bell-notification.svg?react";
+import Setting from "./Icons/settings.svg?react";
+import Sun from "./Icons/sun-light.svg?react";
+import Moon from "./Icons/half-moon.svg?react";
+import Profile from "./Icons/profile-circle.svg?react";
 
 function Topbar({ setSearch, searchPlaceHolder, isDark, setIsDark }) {
+
+  const handleClicked =(button) =>{
+    alert(`${button} Button is clicked`)
+  }
+
+  // styling shared among all icons
+  const buttonStyling = "p-1 sm:p-2 rounded-full hover:bg-[#1f4024] transition duration-200"
+
+  const iconStyling = `w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6   ${isDark ? "text-white" : "text-black"}`
+
+
+
+
   return (
     <div
-      className={`flex items-center justify-between w-full p-2 mb-6 
-      ${isDark ? "bg-[#171821]" : "bg-gray-200"}`}
+      className={`flex items-center justify-between w-full p-1 mb-6 
+      ${isDark ? "bg-[#171821]" : "bg-amber-50"}`}
     >
-      {/* SEARCH BAR */}
-      <div className="flex-1 max-w-[70%]">
+      {/* search bar */}
+      <div className="flex-1 opacity-50">
         <input
           type="text"
           onChange={(e) => setSearch(e.target.value)}
           placeholder={searchPlaceHolder}
           className={`
-            w-full rounded-full border transition-all duration-300
-            px-3 py-1 text-xs
-            sm:px-4 sm:py-2 sm:text-sm
-            md:text-base
-
+            w-full md:w-7/10 rounded-full border transition-all duration-300   px-0 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base
             ${
               isDark
                 ? "bg-[#21222D] border-gray-700 text-gray-100 placeholder-gray-400"
@@ -40,54 +52,51 @@ function Topbar({ setSearch, searchPlaceHolder, isDark, setIsDark }) {
 
 
 
-
-
-      {/* RIGHT SIDE ICONS */}
+      {/* icons */}
       <div className="flex gap-1 sm:gap-2 ml-2">
 
-        {/* Notification */}
+        {/* notidications */}
         <button
-          className="
-            p-1 sm:p-2 rounded-full 
-            hover:bg-[#1f4024] transition duration-200
-          "
+          onClick={ ()=> handleClicked("Notification") }
+          className= {buttonStyling}
         >
-          <BellIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          <BellRing className= {iconStyling}/>
         </button>
 
-        {/* Theme Toggle */}
+
+
+        {/* theme */}
         <button
           onClick={() => setIsDark(!isDark)}
-          className="
-            p-1 sm:p-2 rounded-full 
-            hover:bg-[#1f4024] transition duration-200
-          "
+          className= {buttonStyling}
         >
           {isDark ? (
-            <Sun className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <Sun className={iconStyling} />
           ) : (
-            <Moon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <Moon className=  {iconStyling}/>
           )}
         </button>
 
-        {/* Settings */}
+
+
+
+        {/* settings */}
         <button
-          className="
-            p-1 sm:p-2 rounded-full 
-            hover:bg-[#1f4024] transition duration-200
-          "
+          onClick={ () => handleClicked("Setting") }
+          className= {buttonStyling}
         >
-          <Setting className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          <Setting className= {iconStyling}/>
         </button>
+
+
 
         {/* Profile */}
         <button
-          className="
-            p-1 sm:p-2 rounded-full
-            hover:bg-[#1f4024] transition duration-200
-          "
+          onClick={handleClicked}
+          className= {buttonStyling}
+          
         >
-          <Profile className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          <Profile className= {iconStyling}/>
         </button>
       </div>
     </div>
