@@ -7,6 +7,7 @@ const Customer = ({ darkMode, searchQuery = "" }) => {
   const handleView = (customer) => setSelectedCustomer(customer);
   const closeDialog = () => setSelectedCustomer(null);
 
+  // Filter logix
   const filteredCustomers = customersData.filter((c) => {
     const q = searchQuery.toLowerCase();
     return (
@@ -14,7 +15,7 @@ const Customer = ({ darkMode, searchQuery = "" }) => {
       c.company.toLowerCase().includes(q) ||
       c.email.toLowerCase().includes(q) ||
       c.phone.toLowerCase().includes(q) ||
-      c.product.toLowerCase().includes(q)
+      c.product.toLowerCase().includes(q) 
     );
   });
 

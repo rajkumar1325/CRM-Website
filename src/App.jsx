@@ -9,9 +9,10 @@ import Topbar from "./assets/Topbar/Topbar.jsx";
 import Leads from "./assets/components/Leads/Leads.jsx";
 import Customer from "./assets/components/Customers/Customer.jsx";
 import { useState } from "react";
-import Support from "./assets/components/customerSupport/Support.jsx";
+import Support from "./assets/components/Support/Support.jsx";
 import Deals from "./assets/components/Deals/Deals.jsx";
 import Reports from "./assets/components/Reports/Reports.jsx";
+import Tasks from "./assets/components/Tasks/Tasks.jsx";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -70,7 +71,7 @@ function App() {
 
 
             {/* Support Section */}
-            <Route path="/support" element={<Support />} />
+            <Route path="/support" element={<Support darkMode={dark} searchQuery={search}/>} />
 
 
 
@@ -82,11 +83,12 @@ function App() {
 
 
 
-            <Route path="/reports" element={<Reports darkMode={true} />} />
+            <Route path="/reports" element={<Reports darkMode={dark} />} />
 
 
 
-            {/* <Route path="/team" element={<Team />} /> */}
+            <Route path="taskAndActivities" element={<Tasks />}  />
+            
           </Routes>
         </main>
       </div>

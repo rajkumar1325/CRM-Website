@@ -10,6 +10,34 @@ className = own react
 
 
 
+<!-- 
+1️⃣ New
+A fresh lead added to your CRM.
+No contact has been made yet.
+➡ “We just got their details.”
+
+2️⃣ Contacted
+You have reached out — call, email, or message — but no strong interest yet.
+➡ “We spoke to them once or twice.”
+
+3️⃣ Qualified
+The lead is interested and fits your target customer profile.
+They have a real chance of buying.
+➡ “They are a good fit and likely to convert.”
+
+4️⃣ Converted
+The lead has successfully become a customer.
+A deal is closed or purchase done.
+➡ “They bought the product. Success!”
+
+5️⃣ Lost
+The lead will not continue.
+No interest, wrong fit, or lost to competition.
+➡ “This lead is not moving forward anymore.” -->
+
+
+
+
 
 used in piechart 
 - // #region mockData counting --> used to minimise a specific line of code
