@@ -10,7 +10,7 @@ className = own react
 
 
 
-<!-- 
+<!---------------------------------------------------------------------------------------
 1️⃣ New
 A fresh lead added to your CRM.
 No contact has been made yet.
@@ -33,7 +33,8 @@ A deal is closed or purchase done.
 5️⃣ Lost
 The lead will not continue.
 No interest, wrong fit, or lost to competition.
-➡ “This lead is not moving forward anymore.” -->
+➡ “This lead is not moving forward anymore.” 
+----------------------------------------------------------------------------------------->
 
 
 
