@@ -736,6 +736,7 @@ export const customersData = [
 
 //supportData
 export const supportData = [
+  
   {
     id: "TCK-001",
     customer: "John Doe",

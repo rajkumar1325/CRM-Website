@@ -96,7 +96,7 @@ Each card or row might include:
 
 
 
-Stage	Color Suggestion
+Stage	 Color Suggestion
 Prospecting	🟡 Yellow
 Proposal	🟢 Green
 Negotiation	🟣 Purple
