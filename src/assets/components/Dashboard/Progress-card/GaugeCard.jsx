@@ -85,7 +85,7 @@ export default function EarningsCard({darkMode}) {
           ${darkMode ? "text-[#7de0d6]" : "text-green-600"}
         `}
       >
-        $ {TotalEarning.toFixed(2)}
+        ₹ {TotalEarning.toFixed(2)}
       </p>
 
 

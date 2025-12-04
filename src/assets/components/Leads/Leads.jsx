@@ -178,10 +178,10 @@ export default function Leads({ darkMode, searchQuery = "" }) {
                 </td>
 
                 <td className="py-2 px-3 sm:px-4 font-semibold text-green-500 whitespace-nowrap">
-                  $
+                  ₹ {" "}
                   {lead.receivedAmount
                     ? lead.receivedAmount.toLocaleString()
-                    : "-"}
+                    : "---"}
                 </td>
 
                 <td className="py-2 px-3 sm:px-4 text-center">

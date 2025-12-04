@@ -2,14 +2,16 @@ import { PieChart, pieArcClasses, pieClasses } from "@mui/x-charts/PieChart";
 import { rainbowSurgePalette } from "@mui/x-charts/colorPalettes";
 import { useTheme } from "@mui/material/styles";
 import { mockData } from "../../../MockData/MockData";
+import { useState } from "react";
 
 export default function LeadsPieChart({ darkMode }) {
     const theme = useTheme();
     const palette = rainbowSurgePalette(theme.palette.mode);
 
+    const [filter, setFilter] = useState('all');
+
     
     //................................ COUNT LEADS FROM MOCK DATA
-    
     let NewCount = 0;
     let ContactedCount = 0;
     let QualifiedCount = 0;
@@ -51,6 +53,7 @@ export default function LeadsPieChart({ darkMode }) {
     const bgClass = darkMode ? "bg-[#21222D] text-white" : "bg-white text-gray-900";
     const legendTextClass = darkMode ? "text-gray-300" : "text-gray-700";
 
+
     return (
         <div
             className={`${bgClass} rounded-2xl p-6 shadow-lg 
@@ -58,6 +61,31 @@ export default function LeadsPieChart({ darkMode }) {
         >
             {/* Title */}
             <h2 className="text-lg font-semibold mb-4">Lead Distribution</h2>
+
+
+            {/* DropDown */}
+            <select 
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="px-3 py-1 rounded-md text-sm border bg-[#2b3140] text-white"    
+            >
+                <option value="all">All</option>
+                <option value="thisMonth">This Month</option>
+                <option value="lastMonth">Last Month</option>
+                <option value="thisYear">This Year</option>
+            </select>
+
+
+            {/* .......................................... */}
+            let filteredData = mockData;
+            if(filter == 'thisMonth'){
+                filteredData = mockData.filter(lead => isThisMonth(lead.purchaseDate))
+            }
+
+            else if(filter == 'thisMonth'){
+                filteredData = mockData.filter( () )
+            }
+
 
             {/* Chart */}
             <div className="w-full flex justify-center items-center">

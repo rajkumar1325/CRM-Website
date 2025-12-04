@@ -22,7 +22,7 @@ export const mockData = [
     conversionDate: "2025-01-28",
     dealStatus: "active",
     receivedAmount: 1000,
-    purchaseDate: "2025-01-28 14:22",
+    purchaseDate: "2025-12-01 14:22",
   },
   {
     id: 498276,
@@ -44,7 +44,7 @@ export const mockData = [
     conversionDate: "2025-03-22",
     dealStatus: "close",
     receivedAmount: 175000,
-    purchaseDate: "2025-01-22 16:33",
+    purchaseDate: "2025-12-01 16:33",
   },
   {
     id: 812364,
@@ -88,7 +88,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 165000,
-    purchaseDate: "2025-01-01 12:05",
+    purchaseDate: "2025-12-02 12:05",
   },
   {
     id: 762931,
@@ -121,7 +121,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-04 18:32",
+    purchaseDate: "2025-12-04 18:32",
   },
   {
     id: 103852,
@@ -143,7 +143,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-01-06 11:20",
+    purchaseDate: "2025-11-03 11:20",
   },
   {
     id: 129478,
@@ -176,7 +176,7 @@ export const mockData = [
     conversionDate: "2025-05-25",
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-06-09 19:45",
+    purchaseDate: "2025-12-03 19:45",
   },
   {
     id: 159847,
@@ -184,7 +184,7 @@ export const mockData = [
     company: "NextGen Tech",
     status: "contacted",
     source: "Website",
-    conversionDate: "2025-05-25",
+    conversionDate: "2025-12-01",
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-04-28 09:55",
