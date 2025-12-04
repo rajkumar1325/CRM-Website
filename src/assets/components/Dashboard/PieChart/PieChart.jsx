@@ -10,7 +10,6 @@ export default function LeadsPieChart({ darkMode }) {
 
     const [filter, setFilter] = useState('all');
 
-    
     //................................ COUNT LEADS FROM MOCK DATA
     let NewCount = 0;
     let ContactedCount = 0;
@@ -18,7 +17,25 @@ export default function LeadsPieChart({ darkMode }) {
     let ConvertedCount = 0;
     let LostCount = 0;
 
-    mockData.forEach((stat) => {
+
+    {/* ....................... Applying filter {based on purchase date} */}
+
+    let filteredData = mockData; //copy actual data 
+    if(filter === 'thisWeek'){
+        filteredData = mockData.filter(lead => thisWeek(lead.purchaseDate))
+    }
+
+    else if(filter == 'thisMonth'){
+        filteredData = mockData.filter( (lead) => thisMonth(lead.purchaseDate) )
+    }
+
+    else if(filter === 'thisYear'){
+        filteredData = mockData.filter( (lead) => thisYear(lead.purchaseDate))
+    }
+
+    
+
+    filteredData.forEach((stat) => {
         if (stat.status === "new") NewCount++;
         else if (stat.status === "contacted") ContactedCount++;
         else if (stat.status === "qualified") QualifiedCount++;
@@ -33,6 +50,44 @@ export default function LeadsPieChart({ darkMode }) {
         { label: "Converted", value: ConvertedCount },
         { label: "Lost", value: LostCount },
     ];
+
+
+
+    // ....................... Helper Function {week}
+    function thisWeek(dateStr) {
+        const date = new Date(dateStr); //current date
+        const now = new Date();
+
+        const start = new Date(now);
+        start.setDate(now.getDate() - now.getDay()); //sunday
+
+        const end = new Date(start);
+        end.setDate(start.getDate()+6); //satuenday
+
+        return date >= start && date <= end;
+    }
+
+    //............................. month
+    function thisMonth(dateStr) {
+    const date = new Date(dateStr);
+    const now = new Date();
+
+    return (
+        date.getMonth() === now.getMonth() &&
+        date.getFullYear() === now.getFullYear()
+    );
+    }
+
+
+    // ....................................year
+    function thisYear(dateStr) {
+    const date = new Date(dateStr);
+    const now = new Date();
+
+    return date.getFullYear() === now.getFullYear();
+    }
+
+
 
     
     // ..............................CHART SETTINGS
@@ -60,33 +115,29 @@ export default function LeadsPieChart({ darkMode }) {
                         w-full md:w-5/10  flex flex-col items-center`}
         >
             {/* Title */}
-            <h2 className="text-lg font-semibold mb-4">Lead Distribution</h2>
+            {/* item-center --> vertically align */}
+            <div className="flex gap-2 flex-row justify-between items-center w-full mb-4"> 
+                <h2 className="text-sm  md:text-lg font-semibold">Lead Distribution</h2>
 
 
-            {/* DropDown */}
-            <select 
-                value={filter}
-                onChange={(e) => setFilter(e.target.value)}
-                className="px-3 py-1 rounded-md text-sm border bg-[#2b3140] text-white"    
-            >
-                <option value="all">All</option>
-                <option value="thisMonth">This Month</option>
-                <option value="lastMonth">Last Month</option>
-                <option value="thisYear">This Year</option>
-            </select>
+                {/* DropDown */}
+                <select 
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                    className={`
+                        text-xs sm:text-sm px-2 py-1 rounded-md border
+                        ${darkMode ? "bg-gray-700 border-gray-600 text-white" : "bg-gray-100 border-gray-300 text-gray-800"}
+                    `}
+                >
+                    <option value="all">All</option>
+                    <option value="thisWeek">This Week</option>
+                    <option value="thisMonth">This Month</option>
+                    <option value="thisYear">This Year</option>
+                </select>
 
-
-            {/* .......................................... */}
-            let filteredData = mockData;
-            if(filter == 'thisMonth'){
-                filteredData = mockData.filter(lead => isThisMonth(lead.purchaseDate))
-            }
-
-            else if(filter == 'thisMonth'){
-                filteredData = mockData.filter( () )
-            }
-
-
+            </div>
+       
+            
             {/* Chart */}
             <div className="w-full flex justify-center items-center">
                 <PieChart
