@@ -6,7 +6,11 @@
  *  company
  *  status            -> stage (new, qualified, contacted, converted, lost)
  *  source
- *  conversionDate    -> present only for converted leads
+ * 
+ *  createdAt         -> lead starting date {required for daily lead counts}
+ *  statusUpdatedAt   -> date {required for daily active/closed tracking}
+ * 
+ *  conversionDate    -> present only for converted leads {required for daily active/closed tracking}
  *  dealStatus        -> "active" | "close"   <-- (you asked for this)
  *  receivedAmount    -> number (0 if not converted)
  * 
@@ -19,419 +23,610 @@ export const mockData = [
     company: "DataCorp",
     status: "new",
     source: "Referral",
-    conversionDate: "2025-01-28",
+
+    createdAt: "2025-12-04 10:10",
+    statusUpdatedAt: "2025-12-04 10:10",
+    conversionDate: "2025-02-14",
+
     dealStatus: "active",
     receivedAmount: 1000,
     purchaseDate: "2025-12-01 14:22",
   },
+
   {
     id: 498276,
     name: "Chris Evans",
     company: "Techify",
     status: "contacted",
     source: "Website",
+
+    createdAt: "2025-02-10 09:30",
+    statusUpdatedAt: "2025-12-04 14:00",
     conversionDate: "2025-02-14",
+
     dealStatus: "close",
     receivedAmount: 95000,
     purchaseDate: "2025-02-28 11:45",
   },
+
   {
     id: 732145,
     name: "Sarah Kim",
     company: "Innovate Inc.",
     status: "converted",
     source: "Social Media",
+
+    createdAt: "2025-02-22 11:18",
+    statusUpdatedAt: "2025-03-22 10:30",
     conversionDate: "2025-03-22",
+
     dealStatus: "close",
     receivedAmount: 175000,
     purchaseDate: "2025-12-01 16:33",
   },
+
   {
     id: 812364,
     name: "Jason Brown",
     company: "Solutions Co.",
     status: "converted",
     source: "Email Campaign",
+
+    createdAt: "2025-12-04 09:10",
+    statusUpdatedAt: "2025-04-01 12:10",
     conversionDate: "2025-04-01",
+
     dealStatus: "close",
     receivedAmount: 140000,
     purchaseDate: "2025-01-18 10:12",
   },
+
   {
     id: 964523,
     name: "Elizabeth Grey",
     company: "Tech Corp.",
     status: "new",
     source: "Website",
+
+    createdAt: "2015-01-20 12:05",
+    statusUpdatedAt: "2015-01-20 12:05",
     conversionDate: "2025-04-18",
+
     dealStatus: "close",
     receivedAmount: 210000,
     purchaseDate: "2015-01-28 13:40",
   },
+
   {
     id: 174862,
     name: "Laura Green",
     company: "Data Systems",
     status: "converted",
     source: "Referral",
+
+    createdAt: "2025-11-20 14:20",
+    statusUpdatedAt: "2025-12-05 13:40",
     conversionDate: "2025-05-09",
+
     dealStatus: "close",
     receivedAmount: 88000,
     purchaseDate: "2025-11-28 19:55",
   },
+
   {
     id: 653217,
     name: "Kevin Hill",
     company: "Global Softwares",
     status: "converted",
     source: "Cold Call",
+
+    createdAt: "2025-11-25 12:00",
+    statusUpdatedAt: "2025-12-05 10:05",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 165000,
     purchaseDate: "2025-12-02 12:05",
   },
+
   {
     id: 762931,
     name: "John Doe",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
+
+    createdAt: "2025-01-01 11:30",
+    statusUpdatedAt: "2025-12-05 09:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-01-02 17:50",
   },
+
   {
     id: 849523,
     name: "Jane Smith",
     company: "Solutions Co.",
     status: "new",
     source: "Referral",
+
+    createdAt: "2025-01-01 14:00",
+    statusUpdatedAt: "2025-12-05 14:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-01-03 09:48",
   },
+
   {
     id: 951246,
     name: "Peter Jones",
     company: "Tech Corp.",
     status: "contacted",
     source: "Social Media",
+
+    createdAt: "2025-11-30 10:22",
+    statusUpdatedAt: "2025-12-05 13:15",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-12-04 18:32",
   },
+
   {
     id: 103852,
     name: "Mary Johnson",
     company: "Innovate Inc.",
     status: "converted",
     source: "Website",
+
+    createdAt: "2023-12-28 09:00",
+    statusUpdatedAt: "2025-12-05 11:40",
     conversionDate: "2024-01-15",
+
     dealStatus: "close",
     receivedAmount: 110000,
     purchaseDate: "2025-01-05 12:59",
   },
+
   {
     id: 118945,
     name: "David Williams",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
+
+    createdAt: "2025-11-01 10:10",
+    statusUpdatedAt: "2025-12-05 14:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2025-11-03 11:20",
   },
+
   {
     id: 129478,
     name: "Emily Brown",
     company: "Solutions Co.",
     status: "new",
     source: "Website",
+
+    createdAt: "2025-01-05 10:40",
+    statusUpdatedAt: "2025-01-05 10:40",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-01-07 15:05",
   },
+
   {
     id: 137592,
     name: "Michael Davis",
     company: "Tech Corp.",
     status: "qualified",
     source: "Referral",
+
+    createdAt: "2025-01-06 09:15",
+    statusUpdatedAt: "2025-01-08 09:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-01-08 14:10",
   },
+
   {
     id: 148236,
     name: "Sophia Taylor",
     company: "Bright Future Ltd.",
     status: "new",
     source: "Social Media",
+
+    createdAt: "2025-12-02 14:00",
+    statusUpdatedAt: "2025-12-02 14:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-12-03 19:45",
   },
+
   {
     id: 159847,
     name: "Daniel Wilson",
     company: "NextGen Tech",
     status: "contacted",
     source: "Website",
+
+    createdAt: "2025-04-25 09:30",
+    statusUpdatedAt: "2025-04-27 12:30",
     conversionDate: "2025-12-01",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-04-28 09:55",
   },
+
   {
     id: 163924,
     name: "Olivia Martinez",
     company: "Visionary Solutions",
     status: "qualified",
     source: "Referral",
+
+    createdAt: "2025-01-09 10:05",
+    statusUpdatedAt: "2025-01-10 12:35",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2025-01-10 13:10",
   },
+
   {
     id: 174658,
     name: "James Anderson",
     company: "Global Softwares",
     status: "converted",
     source: "Email Campaign",
+
+    createdAt: "2023-12-18 10:20",
+    statusUpdatedAt: "2024-02-20 11:10",
     conversionDate: "2024-02-20",
+
     dealStatus: "close",
     receivedAmount: 132000,
     purchaseDate: "2025-02-15 11:42",
   },
+
+
   {
     id: 186523,
     name: "Ava Thomas",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
+
+    createdAt: "2025-04-18 10:00",
+    statusUpdatedAt: "2025-05-25 12:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2025-04-23 10:34",
   },
+
   {
     id: 197351,
     name: "William Garcia",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
+
+    createdAt: "2021-01-20 10:00",
+    statusUpdatedAt: "2021-01-28 10:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2021-01-28 14:45",
   },
+
   {
     id: 203467,
     name: "Isabella Martinez",
     company: "Solutions Co.",
     status: "contacted",
     source: "Social Media",
+
+    createdAt: "2022-01-20 13:00",
+    statusUpdatedAt: "2022-01-27 09:40",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2022-01-28 15:58",
   },
+
   {
     id: 219456,
     name: "Benjamin Lee",
     company: "Future Tech Ltd.",
     status: "new",
     source: "Referral",
+
+    createdAt: "2023-01-25 11:00",
+    statusUpdatedAt: "2023-01-25 11:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2023-01-28 17:20",
   },
+
   {
     id: 223785,
     name: "Charlotte Walker",
     company: "Bright Future Ltd.",
     status: "converted",
     source: "Website",
+
+    createdAt: "2011-01-10 10:40",
+    statusUpdatedAt: "2024-03-05 12:20",
     conversionDate: "2024-03-05",
+
     dealStatus: "close",
     receivedAmount: 98000,
     purchaseDate: "2011-01-28 13:19",
   },
+
   {
     id: 234871,
     name: "Lucas Hall",
     company: "Visionary Solutions",
     status: "lost",
     source: "Cold Call",
+
+    createdAt: "2012-01-16 11:22",
+    statusUpdatedAt: "2025-05-25 09:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2012-01-28 18:00",
   },
+
   {
     id: 247953,
     name: "Mia Young",
     company: "NextGen Tech",
     status: "qualified",
     source: "Social Media",
+
+    createdAt: "2014-01-20 10:20",
+    statusUpdatedAt: "2014-01-28 13:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2014-01-28 11:35",
   },
+
   {
     id: 258417,
     name: "Ethan Allen",
     company: "Tech Corp.",
     status: "contacted",
     source: "Email Campaign",
+
+    createdAt: "2001-01-20 12:10",
+    statusUpdatedAt: "2001-01-27 10:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2001-01-28 16:40",
   },
+
   {
     id: 268934,
     name: "Amelia King",
     company: "Global Softwares",
     status: "new",
     source: "Website",
+
+    createdAt: "2002-01-20 14:30",
+    statusUpdatedAt: "2002-01-20 14:30",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2002-01-28 14:48",
   },
+
   {
     id: 279846,
     name: "Robert White",
     company: "DataCorp",
     status: "converted",
     source: "Referral",
+
+    createdAt: "2003-01-10 11:20",
+    statusUpdatedAt: "2025-01-28 10:30",
     conversionDate: "2025-01-28",
+
     dealStatus: "active",
     receivedAmount: 15000,
     purchaseDate: "2003-01-28 10:50",
   },
+
   {
     id: 289561,
     name: "Chris Evans",
     company: "Techify",
     status: "converted",
     source: "Website",
+
+    createdAt: "2004-01-15 09:10",
+    statusUpdatedAt: "2025-02-14 09:30",
     conversionDate: "2025-02-14",
+
     dealStatus: "close",
     receivedAmount: 12000,
     purchaseDate: "2004-01-28 09:55",
   },
+
   {
     id: 299817,
     name: "Sarah Kim",
     company: "Innovate Inc.",
     status: "converted",
     source: "Social Media",
+
+    createdAt: "2005-01-12 10:10",
+    statusUpdatedAt: "2005-01-20 12:30",
     conversionDate: "2025-03-22",
+
     dealStatus: "active",
     receivedAmount: 18000,
     purchaseDate: "2005-01-28 12:12",
   },
+
   {
     id: 306784,
     name: "Jason Brown",
     company: "Solutions Co.",
     status: "converted",
     source: "Email Campaign",
+
+    createdAt: "2006-01-10 10:00",
+    statusUpdatedAt: "2025-04-01 11:40",
     conversionDate: "2025-04-01",
+
     dealStatus: "close",
     receivedAmount: 20000,
     purchaseDate: "2006-01-28 15:18",
   },
+
   {
     id: 312958,
     name: "Elizabeth Grey",
     company: "Tech Corp.",
     status: "converted",
     source: "Website",
+
+    createdAt: "2007-01-15 10:30",
+    statusUpdatedAt: "2025-04-18 10:20",
     conversionDate: "2025-04-18",
+
     dealStatus: "active",
     receivedAmount: 22000,
     purchaseDate: "2007-01-28 11:30",
   },
+
   {
     id: 324879,
     name: "Laura Green",
     company: "Data Systems",
     status: "qualified",
     source: "Referral",
+
+    createdAt: "2008-01-20 09:10",
+    statusUpdatedAt: "2008-01-28 13:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "active",
     receivedAmount: 0,
     purchaseDate: "2008-01-28 19:33",
   },
+
   {
     id: 336512,
     name: "John Doe",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
+
+    createdAt: "2025-03-20 09:20",
+    statusUpdatedAt: "2025-03-28 12:00",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2025-03-28 18:30",
   },
+
   {
     id: 347916,
     name: "Mary Johnson",
     company: "Innovate Inc.",
     status: "converted",
     source: "Website",
+
+    createdAt: "2025-11-01 13:00",
+    statusUpdatedAt: "2024-01-15 11:00",
     conversionDate: "2024-01-15",
+
     dealStatus: "close",
     receivedAmount: 14000,
     purchaseDate: "2025-11-10 20:40",
   },
+
   {
     id: 358724,
     name: "David Williams",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
+
+    createdAt: "2025-11-01 10:00",
+    statusUpdatedAt: "2025-05-25 14:20",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2025-11-04 11:55",
   },
+
   {
     id: 369528,
     name: "Michael Davis",
     company: "Tech Corp.",
     status: "qualified",
     source: "Referral",
+
+    createdAt: "2025-01-28 10:00",
+    statusUpdatedAt: "2025-01-31 11:20",
     conversionDate: "2025-05-25",
+
     dealStatus: "close",
     receivedAmount: 0,
     purchaseDate: "2025-01-31 14:25",
   },
+
   {
     id: 372814,
     name: "James Anderson",
     company: "Global Softwares",
     status: "converted",
     source: "Email Campaign",
+
+    createdAt: "2025-06-18 10:10",
+    statusUpdatedAt: "2024-02-20 11:00",
     conversionDate: "2024-02-20",
+
     dealStatus: "close",
     receivedAmount: 17500,
     purchaseDate: "2025-06-22 16:45",
   },
 ];
+
 
 
 
