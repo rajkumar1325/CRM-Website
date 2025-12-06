@@ -3,8 +3,6 @@ import { mockData } from "../../../MockData/MockData";
 
 // Icons
 import PhoneIcon from "./icons/phone.svg?react";
-import PlayIcon from "./icons/play.svg?react";
-import ChatIcon from "./icons/chat.svg?react";
 import MailIcon from "./icons/mail.svg?react";
 import UserIcon from "./icons/user.svg?react";
 import Employee from "./icons/employee.svg?react";
@@ -16,7 +14,8 @@ export default function TrackingSession({ darkMode }) {
   const allCalls = mockData.flatMap(lead =>
     (lead.callHistory || []).map(call => ({
       ...call,
-      leadName: lead.name // Client name
+      leadName: lead.name, // Client name
+      leadEmail : lead.email
     }))
   );
 
@@ -49,11 +48,33 @@ export default function TrackingSession({ darkMode }) {
                 {/* Left side */}
                 <div>
 
-                  {/* Client Number */}
                   <div className="flex items-center gap-2 mb-1">
-                    <PhoneIcon className="w-4 h-4" />
-                    <p className="font-medium">{call.callNumber}</p>
+
+                    {/* call */}
+                    {call.contactType === 'Call' && (
+                      <>
+                        <PhoneIcon className={`w-4 h-4 ${darkMode ? "text-green-300" : "text-green-800"}`} />
+                        <p className="font-medium" >{call.callNumber}</p>
+                      </>
+                    )}
+
+                    {/* email */}
+                    {call.contactType === 'Email' &&(
+                      <>
+                        <MailIcon className= {`w-4 h-4 ${darkMode ? "text-green-300" : "text-green-800"}`} />
+                        <p className="font-medium" > {call.email} </p>
+                      </>
+                    )}
+
+                    {/* offline-visit */}
+                    {call.contactType === "Local" && (
+                      <>
+                        <UserIcon className={`w-4 h-4 ${darkMode ? "text-green-300" : "text-green-800"}`}/>
+                        <p className="font-medium" > Visited Office </p>
+                      </>
+                    )}
                   </div>
+
 
                   {/* Client Name */}
                   <p className={`text-sm ${secondaryText}`}>
@@ -62,7 +83,7 @@ export default function TrackingSession({ darkMode }) {
 
                   {/* Date & Time */}
                   <div className="flex items-center gap-2 mt-1">
-                    <CalendarIcon className="w-4 h-4" />
+                    <CalendarIcon className= {`w-4 h-4 ${darkMode ? "text-green-300" : "text-green-800"}`} />
                     <p className={`text-xs ${secondaryText}`}>{call.time}</p>
                   </div>
 
@@ -76,8 +97,8 @@ export default function TrackingSession({ darkMode }) {
                     {/* converted by */}
                   <div className="flex gap-4 text-sm font-medium justify-between items-center">
 
-                    <div className="flex">
-                        <Employee className={""}/>
+                    <div className="flex gap-2">
+                        <Employee className={`${darkMode? "text-green-300" : "text-green-800"}`}/>
                         <span className="mt-1" >{call.contactedBy}</span>
                     </div>
 

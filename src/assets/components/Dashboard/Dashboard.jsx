@@ -1,6 +1,5 @@
 import React from "react";
 
-import Topbar from "../../Topbar/Topbar.jsx";
 import Cards from "./Cards/Cards.jsx";
 import GaugeCard from "./Progress-card/GaugeCard.jsx";
 import PieChart from "./PieChart/PieChart.jsx";

@@ -20,6 +20,7 @@ export const mockData = [
   {
     id: 267881,
     name: "Robert White",
+    email: "robert.white@datacorp.com",
     company: "DataCorp",
     status: "new",
     source: "Referral",
@@ -33,20 +34,21 @@ export const mockData = [
     purchaseDate: "2025-12-01 14:22",
 
     callHistory: [
-        {
-          callNumber: "+91 3453 43210",
-          feedback: "The Hello dear but needs follow-up.",
-          rating: 4,
-          time: "2025-01-22 14:32",
-          contactedBy : "Rajesh verma"
-        }
-      ],
-
+      {
+        callNumber: "+91 3453 43210",
+        feedback: "The Hello dear but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy: "Rajesh verma",
+        contactType: "Call"
+      }
+    ]
   },
 
   {
     id: 498276,
     name: "Lowerance Evans",
+    email: "lowerance.evans@techify.com",
     company: "Techify",
     status: "contacted",
     source: "Website",
@@ -65,18 +67,16 @@ export const mockData = [
         feedback: "This is hello but needs follow-up.",
         rating: 4,
         time: "2025-02-21 14:32",
-        contactedBy : "Rohan verma"
-
+        contactedBy: "Rohan verma",
+        contactType: "Call"
       }
-    ],
-
-    
-
+    ]
   },
 
   {
     id: 732145,
     name: "Sarah Kim",
+    email: "sarah.kim@innovateinc.com",
     company: "Innovate Inc.",
     status: "converted",
     source: "Social Media",
@@ -88,7 +88,6 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 175000,
     purchaseDate: "2025-12-01 16:33",
-    
 
     callHistory: [
       {
@@ -96,15 +95,16 @@ export const mockData = [
         feedback: "The client was interested but needs follow-up.",
         rating: 4,
         time: "2025-01-22 14:32",
-        contactedBy : "Roshan verma"
+        contactedBy: "Roshan verma",
+        contactType: "Email"
       }
-    ],
-
+    ]
   },
 
   {
     id: 812364,
     name: "Jason Brown",
+    email: "jason.brown@solutionsco.com",
     company: "Solutions Co.",
     status: "converted",
     source: "Email Campaign",
@@ -117,24 +117,22 @@ export const mockData = [
     receivedAmount: 140000,
     purchaseDate: "2025-01-18 10:12",
 
-
     callHistory: [
       {
         callNumber: "+91 98765 43210",
         feedback: "The client was interested but needs follow-up.",
         rating: 4,
         time: "2025-01-22 14:32",
-        contactedBy : "Ravi verma"
+        contactedBy: "Ravi verma",
+        contactType: "Call"
       }
-    ],
-
-
-
+    ]
   },
 
   {
     id: 964523,
     name: "Elizabeth Grey",
+    email: "elizabeth.grey@techcorp.com",
     company: "Tech Corp.",
     status: "new",
     source: "Website",
@@ -147,24 +145,22 @@ export const mockData = [
     receivedAmount: 210000,
     purchaseDate: "2015-01-28 13:40",
 
-
     callHistory: [
       {
         callNumber: "+91 98765 43210",
         feedback: "The client was interested but needs follow-up.",
         rating: 4,
         time: "2025-01-22 14:32",
-        contactedBy : "Rajesh sharma"
+        contactedBy: "Rajesh sharma",
+        contactType: "Email"
       }
-    ],
-
-    
-
+    ]
   },
 
   {
     id: 174862,
     name: "Laura Green",
+    email: "laura.green@datasystems.com",
     company: "Data Systems",
     status: "converted",
     source: "Referral",
@@ -183,15 +179,16 @@ export const mockData = [
         feedback: "The client was interested but needs follow-up.",
         rating: 4,
         time: "2025-01-22 14:32",
-        contactedBy : "Rohan verma"
+        contactedBy: "Rohan verma",
+        contactType: "Email"
       }
-    ],
-
+    ]
   },
 
   {
     id: 653217,
     name: "Kevin Hill",
+    email: "kevin.hill@globalsoftwares.com",
     company: "Global Softwares",
     status: "converted",
     source: "Cold Call",
@@ -207,18 +204,20 @@ export const mockData = [
     callHistory: [
       {
         callNumber: "+91 98765 43210",
-        feedback: "The client was interested and are ready to buy our project but needs follow-up.",
+        feedback:
+          "The client was interested and are ready to buy our project but needs follow-up.",
         rating: 4,
         time: "2025-01-22 14:32",
-        contactedBy : "Sohan verma"
+        contactedBy: "Sohan verma",
+        contactType: "Call"
       }
-    ],
-
+    ]
   },
 
   {
     id: 762931,
     name: "John Doe",
+    email: "john.doe@innovateinc.com",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
@@ -229,12 +228,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-02 17:50",
+    purchaseDate: "2025-01-02 17:50"
   },
 
   {
     id: 849523,
     name: "Jane Smith",
+    email: "jane.smith@solutionsco.com",
     company: "Solutions Co.",
     status: "new",
     source: "Referral",
@@ -245,12 +245,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-03 09:48",
+    purchaseDate: "2025-01-03 09:48"
   },
 
   {
     id: 951246,
     name: "Peter Jones",
+    email: "peter.jones@techcorp.com",
     company: "Tech Corp.",
     status: "contacted",
     source: "Social Media",
@@ -261,12 +262,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-12-04 18:32",
+    purchaseDate: "2025-12-04 18:32"
   },
 
   {
     id: 103852,
     name: "Mary Johnson",
+    email: "mary.johnson@innovateinc.com",
     company: "Innovate Inc.",
     status: "converted",
     source: "Website",
@@ -277,12 +279,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 110000,
-    purchaseDate: "2025-01-05 12:59",
+    purchaseDate: "2025-01-05 12:59"
   },
 
   {
     id: 118945,
     name: "David Williams",
+    email: "david.williams@datasystems.com",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
@@ -293,12 +296,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-11-03 11:20",
+    purchaseDate: "2025-11-03 11:20"
   },
 
   {
     id: 129478,
     name: "Emily Brown",
+    email: "emily.brown@solutionsco.com",
     company: "Solutions Co.",
     status: "new",
     source: "Website",
@@ -309,12 +313,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-07 15:05",
+    purchaseDate: "2025-01-07 15:05"
   },
 
   {
     id: 137592,
     name: "Michael Davis",
+    email: "michael.davis@techcorp.com",
     company: "Tech Corp.",
     status: "qualified",
     source: "Referral",
@@ -325,12 +330,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-08 14:10",
+    purchaseDate: "2025-01-08 14:10"
   },
 
   {
     id: 148236,
     name: "Sophia Taylor",
+    email: "sophia.taylor@brightfuture.com",
     company: "Bright Future Ltd.",
     status: "new",
     source: "Social Media",
@@ -341,12 +347,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-12-03 19:45",
+    purchaseDate: "2025-12-03 19:45"
   },
 
   {
     id: 159847,
     name: "Daniel Wilson",
+    email: "daniel.wilson@nextgentech.com",
     company: "NextGen Tech",
     status: "contacted",
     source: "Website",
@@ -357,12 +364,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-04-28 09:55",
+    purchaseDate: "2025-04-28 09:55"
   },
 
   {
     id: 163924,
     name: "Olivia Martinez",
+    email: "olivia.martinez@visionarysolutions.com",
     company: "Visionary Solutions",
     status: "qualified",
     source: "Referral",
@@ -373,12 +381,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2025-01-10 13:10",
+    purchaseDate: "2025-01-10 13:10"
   },
 
   {
     id: 174658,
     name: "James Anderson",
+    email: "james.anderson@globalsoftwares.com",
     company: "Global Softwares",
     status: "converted",
     source: "Email Campaign",
@@ -389,13 +398,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 132000,
-    purchaseDate: "2025-02-15 11:42",
+    purchaseDate: "2025-02-15 11:42"
   },
-
 
   {
     id: 186523,
     name: "Ava Thomas",
+    email: "ava.thomas@datasystems.com",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
@@ -406,12 +415,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-04-23 10:34",
+    purchaseDate: "2025-04-23 10:34"
   },
 
   {
     id: 197351,
     name: "William Garcia",
+    email: "william.garcia@innovateinc.com",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
@@ -422,12 +432,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2021-01-28 14:45",
+    purchaseDate: "2021-01-28 14:45"
   },
 
   {
     id: 203467,
     name: "Isabella Martinez",
+    email: "isabella.martinez@solutionsco.com",
     company: "Solutions Co.",
     status: "contacted",
     source: "Social Media",
@@ -438,12 +449,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2022-01-28 15:58",
+    purchaseDate: "2022-01-28 15:58"
   },
 
   {
     id: 219456,
     name: "Benjamin Lee",
+    email: "benjamin.lee@futuretech.com",
     company: "Future Tech Ltd.",
     status: "new",
     source: "Referral",
@@ -454,12 +466,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2023-01-28 17:20",
+    purchaseDate: "2023-01-28 17:20"
   },
 
   {
     id: 223785,
     name: "Charlotte Walker",
+    email: "charlotte.walker@brightfuture.com",
     company: "Bright Future Ltd.",
     status: "converted",
     source: "Website",
@@ -470,12 +483,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 98000,
-    purchaseDate: "2011-01-28 13:19",
+    purchaseDate: "2011-01-28 13:19"
   },
 
   {
     id: 234871,
     name: "Lucas Hall",
+    email: "lucas.hall@visionarysolutions.com",
     company: "Visionary Solutions",
     status: "lost",
     source: "Cold Call",
@@ -486,12 +500,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2012-01-28 18:00",
+    purchaseDate: "2012-01-28 18:00"
   },
 
   {
     id: 247953,
     name: "Mia Young",
+    email: "mia.young@nextgentech.com",
     company: "NextGen Tech",
     status: "qualified",
     source: "Social Media",
@@ -502,12 +517,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2014-01-28 11:35",
+    purchaseDate: "2014-01-28 11:35"
   },
 
   {
     id: 258417,
     name: "Ethan Allen",
+    email: "ethan.allen@techcorp.com",
     company: "Tech Corp.",
     status: "contacted",
     source: "Email Campaign",
@@ -518,12 +534,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2001-01-28 16:40",
+    purchaseDate: "2001-01-28 16:40"
   },
 
   {
     id: 268934,
     name: "Amelia King",
+    email: "amelia.king@globalsoftwares.com",
     company: "Global Softwares",
     status: "new",
     source: "Website",
@@ -534,12 +551,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2002-01-28 14:48",
+    purchaseDate: "2002-01-28 14:48"
   },
 
   {
     id: 279846,
     name: "Robert White",
+    email: "robert.white@datacorp.com",
     company: "DataCorp",
     status: "converted",
     source: "Referral",
@@ -550,12 +568,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 15000,
-    purchaseDate: "2003-01-28 10:50",
+    purchaseDate: "2003-01-28 10:50"
   },
 
   {
     id: 289561,
     name: "Chris Evans",
+    email: "chris.evans@techify.com",
     company: "Techify",
     status: "converted",
     source: "Website",
@@ -566,12 +585,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 12000,
-    purchaseDate: "2004-01-28 09:55",
+    purchaseDate: "2004-01-28 09:55"
   },
 
   {
     id: 299817,
     name: "Sarah Kim",
+    email: "sarah.kim@innovateinc.com",
     company: "Innovate Inc.",
     status: "converted",
     source: "Social Media",
@@ -582,12 +602,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 18000,
-    purchaseDate: "2005-01-28 12:12",
+    purchaseDate: "2005-01-28 12:12"
   },
 
   {
     id: 306784,
     name: "Jason Brown",
+    email: "jason.brown@solutionsco.com",
     company: "Solutions Co.",
     status: "converted",
     source: "Email Campaign",
@@ -598,12 +619,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 20000,
-    purchaseDate: "2006-01-28 15:18",
+    purchaseDate: "2006-01-28 15:18"
   },
 
   {
     id: 312958,
     name: "Elizabeth Grey",
+    email: "elizabeth.grey@techcorp.com",
     company: "Tech Corp.",
     status: "converted",
     source: "Website",
@@ -614,12 +636,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 22000,
-    purchaseDate: "2007-01-28 11:30",
+    purchaseDate: "2007-01-28 11:30"
   },
 
   {
     id: 324879,
     name: "Laura Green",
+    email: "laura.green@datasystems.com",
     company: "Data Systems",
     status: "qualified",
     source: "Referral",
@@ -630,12 +653,13 @@ export const mockData = [
 
     dealStatus: "active",
     receivedAmount: 0,
-    purchaseDate: "2008-01-28 19:33",
+    purchaseDate: "2008-01-28 19:33"
   },
 
   {
     id: 336512,
     name: "John Doe",
+    email: "john.doe@innovateinc.com",
     company: "Innovate Inc.",
     status: "qualified",
     source: "Website",
@@ -646,12 +670,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-03-28 18:30",
+    purchaseDate: "2025-03-28 18:30"
   },
 
   {
     id: 347916,
     name: "Mary Johnson",
+    email: "mary.johnson@innovateinc.com",
     company: "Innovate Inc.",
     status: "converted",
     source: "Website",
@@ -662,12 +687,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 14000,
-    purchaseDate: "2025-11-10 20:40",
+    purchaseDate: "2025-11-10 20:40"
   },
 
   {
     id: 358724,
     name: "David Williams",
+    email: "david.williams@datasystems.com",
     company: "Data Systems",
     status: "lost",
     source: "Cold Call",
@@ -678,12 +704,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-11-04 11:55",
+    purchaseDate: "2025-11-04 11:55"
   },
 
   {
     id: 369528,
     name: "Michael Davis",
+    email: "michael.davis@techcorp.com",
     company: "Tech Corp.",
     status: "qualified",
     source: "Referral",
@@ -694,12 +721,13 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 0,
-    purchaseDate: "2025-01-31 14:25",
+    purchaseDate: "2025-01-31 14:25"
   },
 
   {
     id: 372814,
     name: "James Anderson",
+    email: "james.anderson@globalsoftwares.com",
     company: "Global Softwares",
     status: "converted",
     source: "Email Campaign",
@@ -710,13 +738,9 @@ export const mockData = [
 
     dealStatus: "close",
     receivedAmount: 17500,
-    purchaseDate: "2025-06-22 16:45",
-  },
+    purchaseDate: "2025-06-22 16:45"
+  }
 ];
-
-
-
-
 
 
 
