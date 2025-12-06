@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import { BellRing } from 'lucide-react';
 
-
 import BellIcon from "./Icons/bell-notification.svg?react";
 import Setting from "./Icons/settings.svg?react";
 import Sun from "./Icons/sun-light.svg?react";
 import Moon from "./Icons/half-moon.svg?react";
 import Profile from "./Icons/profile-circle.svg?react";
+import ChatIcon from "./Icons/chatIcon.svg?react";
 
 function Topbar({ setSearch, searchPlaceHolder, isDark, setIsDark }) {
 
@@ -63,6 +63,14 @@ function Topbar({ setSearch, searchPlaceHolder, isDark, setIsDark }) {
           <BellRing className= {iconStyling}/>
         </button>
 
+        
+        {/* chatBot */}
+        <button
+          onClick={ () => handleClicked("Notification") }
+          className={buttonStyling}
+        >
+          <ChatIcon className = {iconStyling}/>
+        </button>
 
 
         {/* theme */}

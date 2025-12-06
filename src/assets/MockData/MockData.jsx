@@ -31,11 +31,22 @@ export const mockData = [
     dealStatus: "active",
     receivedAmount: 1000,
     purchaseDate: "2025-12-01 14:22",
+
+    callHistory: [
+        {
+          callNumber: "+91 3453 43210",
+          feedback: "The Hello dear but needs follow-up.",
+          rating: 4,
+          time: "2025-01-22 14:32",
+          contactedBy : "Rajesh verma"
+        }
+      ],
+
   },
 
   {
     id: 498276,
-    name: "Chris Evans",
+    name: "Lowerance Evans",
     company: "Techify",
     status: "contacted",
     source: "Website",
@@ -47,6 +58,20 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 95000,
     purchaseDate: "2025-02-28 11:45",
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "This is hello but needs follow-up.",
+        rating: 4,
+        time: "2025-02-21 14:32",
+        contactedBy : "Rohan verma"
+
+      }
+    ],
+
+    
+
   },
 
   {
@@ -63,6 +88,18 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 175000,
     purchaseDate: "2025-12-01 16:33",
+    
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "The client was interested but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy : "Roshan verma"
+      }
+    ],
+
   },
 
   {
@@ -79,6 +116,20 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 140000,
     purchaseDate: "2025-01-18 10:12",
+
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "The client was interested but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy : "Ravi verma"
+      }
+    ],
+
+
+
   },
 
   {
@@ -95,6 +146,20 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 210000,
     purchaseDate: "2015-01-28 13:40",
+
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "The client was interested but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy : "Rajesh sharma"
+      }
+    ],
+
+    
+
   },
 
   {
@@ -111,6 +176,17 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 88000,
     purchaseDate: "2025-11-28 19:55",
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "The client was interested but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy : "Rohan verma"
+      }
+    ],
+
   },
 
   {
@@ -127,6 +203,17 @@ export const mockData = [
     dealStatus: "close",
     receivedAmount: 165000,
     purchaseDate: "2025-12-02 12:05",
+
+    callHistory: [
+      {
+        callNumber: "+91 98765 43210",
+        feedback: "The client was interested and are ready to buy our project but needs follow-up.",
+        rating: 4,
+        time: "2025-01-22 14:32",
+        contactedBy : "Sohan verma"
+      }
+    ],
+
   },
 
   {

@@ -8,6 +8,7 @@ import SalesChart from "./SalesChart/SalesChart.jsx";
 import CustomerFulfilmentChart from "./CustomerFullfilment/CustomerFullfillment.jsx";
 import TodoList from "./ToDoList/TodoList.jsx";
 import MeetingCard from "./MeetingCard/MeetingCard.jsx";
+import TrackingSession from "./TrackingSession/TrackingSession.jsx";
 
 export default function Dashboard({ isDark }) {
   return (
@@ -27,7 +28,8 @@ export default function Dashboard({ isDark }) {
 
             <div className="flex flex-col md:flex-row justify-between gap-2 mt-2">
                <CustomerFulfilmentChart darkMode={isDark} />
-               <TodoList darkMode={isDark} />
+               {/* <TodoList darkMode={isDark} /> */}
+               <TrackingSession darkMode={isDark} />
                <MeetingCard darkMode={isDark} />
             </div>
     </>
